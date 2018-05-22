@@ -4,6 +4,8 @@ A modern, free and open-source web mapping application with built-in migration s
 
 This repository is under active development. Please come back later to check our progress.
 
+![image](https://user-images.githubusercontent.com/1951843/40384710-609da6fa-5dd2-11e8-9171-604eee7abbef.png)
+
 ## License
 
 The reason for selecting the [AGPL v3.0](https://github.com/virtualgis/maple/blob/master/LICENSE) as our open source license is to require that enhancements to Maple be released to the community. Traditional GPL often does not achieve this anymore as a huge amount of software runs in the cloud.
