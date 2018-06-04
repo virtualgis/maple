@@ -1,0 +1,6 @@
+node_modules/
+db/
+Thumbs.db
+App_Data/
+tests/config/configurations.json
+package-lock.*

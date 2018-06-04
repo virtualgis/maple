@@ -1,0 +1,21 @@
+<div>
+	<div class="category">
+		<div class="title">
+			<img src="${icon}" alt="" />
+			<div class="text">${label}</div>
+			<div class="hide featuresCount" data-dojo-attach-point="featuresCount"></div>
+		</div>
+		<div class="itemLoading" data-dojo-attach-point="loading">
+			<img src="/images/spinner.gif" /> Loading...
+		</div>
+		<div class="itemError hide" data-dojo-attach-point="error">
+			<img src="/images/warning.svg" />
+			<div class="errorMessage" data-dojo-attach-point="errorMessage"></div>
+			<div class="errorAction">
+				<button class="submit" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="btnTryAgain">Try Again</button>
+			</div>
+		</div>
+		<div class="content" data-dojo-attach-point="results">
+		</div>
+	</div>
+</div>

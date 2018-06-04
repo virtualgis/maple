@@ -1,0 +1,22 @@
+<div id="resetPwdView">
+	<h1 data-dojo-type="dojox/mobile/Heading" data-dojo-props='back:"Back", href:"#app,login"'>Reset Your Password</h1>
+	<div data-dojo-type="dojox/mobile/ScrollableView">
+		<div class="textCenter" id="resetPassword">
+			<form data-dojo-attach-point="usernameForm">
+				<label for="resetUsername">Username:</label> <input type="text" name="resetUsername" id="resetUsername" data-dojo-attach-point="resetUsername" value="${lastUsername}" placeholder="Username" required="true" autocapitalize="off" autocorrect="off"/><br/>
+				<button class="submit btnContinue" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="btnContinue" data-dojo-attach-event="onClick:btnContinuePressed">Continue</button>
+			</form>
+			<form class="newPassword hide" data-dojo-attach-point="newPasswordForm">
+				<label for="newPassword" class="hasNote">New Password:<div class="note">7 characters minimum</div></label> <input type="password" data-dojo-attach-point="newPassword" id="newPassword" name="newPassword" value="" placeholder="" required="true" autocapitalize="off" autocorrect="off"/><br/>
+				<label for="confirmNewPassword">Confirm Password:</label> <input type="password" data-dojo-attach-point="confirmNewPassword" id="confirmNewPassword" name="confirmNewPassword" value="" placeholder="" required="true" autocapitalize="off" autocorrect="off"/><br/>
+				<button class="submit btnChangePassword" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="btnChangePassword" data-dojo-attach-event="onClick:btnChangePasswordPressed">Change Password</button>
+			</form>
+			<div class="success hide" data-dojo-attach-point="success">
+			</div>
+			<div class="errorBox hide" data-dojo-attach-point="error">
+				<img src="/images/warning.svg" />
+				<div class="errorMessage" data-dojo-attach-point="errorMessage"></div>
+			</div>
+		</div>
+	</div>
+</div>

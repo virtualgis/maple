@@ -1,0 +1,17 @@
+<div>
+	<div class="widgetOptions">
+		<div class="option switch">
+			<div class="label">Radar</div> <div data-dojo-type="dojox/mobile/Switch" leftLabel="On" rightLabel="Off" value="on" id="weatherRadarOption" data-dojo-attach-point="weatherRadarOption"></div>
+		</div>
+		
+		<div class="option slider">
+			<div class="label">Opacity</div> <input type="range" data-dojo-type="maple/widgets/Slider" min="0" max="100" data-dojo-attach-point="opacity"/>
+		</div>
+	</div>
+	<div data-dojo-attach-point="radarControls" class="radarControls">
+		<button class="submit square icon iconPause" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="buttonTogglePlay" data-dojo-attach-event="onClick:togglePlay"></button>
+		<div class="dateDisplay" data-dojo-attach-point="dateDisplay"></div>
+	</div>
+
+	<div class="about" data-dojo-attach-point="about"></div>
+</div>

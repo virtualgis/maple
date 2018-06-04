@@ -1,0 +1,9 @@
+<div id="postLoginMessageView">
+	<h1 data-dojo-type="dojox/mobile/Heading" data-dojo-props='back:"Back", href:"#app,login"'>${title}</h1>
+	<div data-dojo-type="maple/helpers/WheelScrollableView">
+		<div class="postLoginMessageContainer">
+			<div class="postLoginMessage" data-dojo-attach-point="message"></div>
+			<button class="submit btnContinue" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="btnContinue" data-dojo-attach-event="onClick:btnContinuePressed">${continueButtonLabel}</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,37 @@
+<div style="width:100%; height:100%;">
+	<div id="search"></div>
+	<div id="test"></div>
+	<div id="map">
+		<div id="menuCloseOverlay"></div>
+		<div id="menuButton"></div>
+		<div id="bottomItems">
+			<div id="mapLoader"><img src="/images/spinner.gif" alt="" />Loading Map ...</div>
+			<div id="mapError"><img src="/images/warning.svg" alt="" />Items Failed to Load</div>
+			<div id="locateButton"></div>
+		</div>
+	</div>
+
+	<div id="sideMenu"></div>
+	<div id="searchQuery"></div>
+
+	<div id="dlgTokenInvalid" data-dojo-type="dojox/mobile/SimpleDialog" data-dojo-props="modal:true">
+	  <div class="mblSimpleDialogTitle">Your Session Has Ended</div>
+	  <div class="mblSimpleDialogText">Please log-in again.</div>
+	  <button id="btnOkDlgTokenInvalid" data-dojo-type="dojox/mobile/Button" class="mblSimpleDialogButton small">&nbsp;&nbsp;OK&nbsp;&nbsp;</button>
+	  <div class="mblSimpleDialogText small">If you think this is a mistake, please <a href="mailto:${supportEmail}">contact support</a>.</div>
+	</div>
+
+	<div id="dlgAuthError" data-dojo-type="dojox/mobile/SimpleDialog" data-dojo-props="modal:true" data-dojo-id="dlgAuthError">
+	  <div class="mblSimpleDialogTitle">Authorization Failed</div>
+	  <div class="mblSimpleDialogText" id="dlgAuthErrorMessage"></div>
+	  <button id="btnOkDlgAuthError" data-dojo-type="dojox/mobile/Button" class="mblSimpleDialogButton small" data-dojo-props="onClick:function(){dlgAuthError.hide();}">&nbsp;&nbsp;Continue&nbsp;&nbsp;</button>
+	  <button id="btnLogoutDlgAuthError" data-dojo-type="dojox/mobile/Button" class="mblSimpleDialogButton small" data-dojo-props="onClick:function(){dlgAuthError.hide();}">&nbsp;&nbsp;Logout&nbsp;&nbsp;</button>
+	</div>
+
+	<div id="dlgGpsError" data-dojo-type="dojox/mobile/SimpleDialog" data-dojo-props="modal:true" data-dojo-id="dlgGpsError">
+	  <div class="mblSimpleDialogTitle">Cannot Find GPS Location</div>
+	  <div class="mblSimpleDialogText">Please make sure you have granted permission to use the GPS and that a valid GPS signal is available.</div>
+	  <button id="btnOkDlgGpsError" data-dojo-type="dojox/mobile/Button" class="mblSimpleDialogButton small" data-dojo-props="onClick:function(){dlgGpsError.hide();}">&nbsp;&nbsp;OK&nbsp;&nbsp;</button>
+	</div>
+	<div id="mapStandby" data-dojo-type="maple/widgets/Standby" data-dojo-props="target:'body'"></div>
+</div>

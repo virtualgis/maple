@@ -1,0 +1,16 @@
+<div>
+	<div class="searchInputGroupContainer">
+		<div class="searchInputGroup" data-dojo-attach-point="searchgroup">
+			<input autocomplete="off" autocapitalize="off" class="searchInput" placeholder="Search" data-dojo-attach-point="searchbox"><div role="button" class="clearSearchButton" tabindex="0" data-dojo-attach-point="clearSearchButton" title="Clear search"><span class="searchClose esriIconClose"></span></div>
+		
+			<div role="button" title="Toggle" class="touchButton toggleSearchButton" data-dojo-attach-point="toggleSearchButton"></div>
+			<div role="button" title="Close" class="touchButton closeSearchButton" data-dojo-attach-point="closeSearchButton"></div>
+		</div>
+	</div>
+	<div class="noResultsBody hide" data-dojo-attach-point="noResults">
+		<div class="noResultsHeader">No results</div>
+		<div class="noResultsText">There were no results found for "<span data-dojo-attach-point="noResultsKeyword"></span>".</div>
+	</div>
+	<div data-dojo-attach-point="queryResults">
+	</div>
+</div>

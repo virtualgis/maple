@@ -1,0 +1,501 @@
+html.touch, html.touch body{
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+html.touch{
+  #map_zoom_slider{ display: none;}
+
+  #map{
+    padding-right: 0;
+
+    #mapLoader, #mapError{
+      right: 2px;
+    }
+
+    &.querySearchOpen{
+      margin-right: 0px;
+
+      #bottomItems{
+        bottom: 55px;
+      }
+    
+      .esriScalebar{
+        bottom: 60px;
+      }
+      .esriControlsBR{
+        bottom: 60px;
+      }
+    }
+  }
+
+  .attachments{
+    border: none;
+    margin-top: $margin;
+    .attachment{
+      margin-bottom: $margin * 2;
+    }
+  }
+
+  .esriAttributeInspector{
+    .atiLayerName{
+      padding-left: 8px;
+    }
+    .atiAttachmentEditor{
+      input[type="file"]{
+        border: none;
+        font-size: 100%;
+      }
+
+      span[dojoattachpoint="_attachmentList"] > span{
+        display: block;
+        margin-bottom: $margin;
+        & > a{
+          line-height: 34px;
+        }
+      }
+      .deleteAttachment{
+        padding: 8px 12px;
+      }
+    }
+  }
+
+
+  #editWidget{
+    .esriEditor{
+      [widgetid="btnUndo"], [widgetid="btnRedo"]{
+        margin-top: $margin;
+      }
+    }
+  }
+
+  #search{
+    div.searchMenu li{
+      padding: 12px 12px;
+    }
+
+    .searchBtn, #search_input{
+      height: $mobile-textbox-height;
+    }
+    .searchIcon{
+      line-height: $mobile-textbox-height;
+    }
+    .searchClose{
+      line-height: $mobile-textbox-height + 10;
+    }
+    .searchSpinner{
+      line-height: 28px;
+      margin-top: 4px;
+      margin-left: -2px;
+    }
+  }
+  
+  #locateButton{
+    right: 20px;
+  }
+  .LocateButton{
+    .zoomLocateButton{ 
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  #menuButton{
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  #sideMenu{
+    &.open{
+      @extend #sideMenu.open;
+    }
+    
+    right: -$side-menu-mobile-width;
+    width: $side-menu-mobile-width;
+    box-shadow: none;
+  
+    #sideMenuToggleButton{display: none;}
+
+    #menuFooter{
+      margin: $margin;
+      #btnCloseSideMenu{ display: none; }
+      #btnLockUnlockMenu{ display: inline-block; }
+
+      button{
+        width: 100%;
+        margin-bottom: $margin / 2;
+      }
+    }
+
+    #accordion{
+      .esriCheckbox{
+        margin-top: 17px;
+      }
+
+      #layerList{
+        div.esriTitle{
+          line-height: 30px;
+        }
+      }
+
+      .esriButton{
+        height: 50px;
+        margin-right: 4px;
+        .colExpIcon{
+          height: 50px - 16px;
+          padding-top: 16px;
+        }
+      }
+
+      & > .item > .content{
+        max-height: none;
+      }
+    }
+
+    #measurement{
+      [dojoattachpoint="_mouseRow"]{
+        display: none;
+      }
+    }
+  }
+
+  .menuItemList{ 
+    .text{
+      max-width: 216px;
+    }
+  }
+
+  #searchQuery{
+    width: 100%;
+    right: -100%;
+    transition: right 0s, top 0.2s, margin-top 0.2s;
+    -webkit-transition: right 0s, top 0.2s, margin-top 0.2s;
+    box-shadow: none;
+
+    &.open{
+      padding-top: 56px;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      box-shadow: none;
+    }
+
+    &.collapsed{
+      z-index: 2;
+      overflow: hidden;
+      height: 100%;
+      top: 100%;
+      margin-top: -54px;
+      box-shadow: $default-box-shadow;
+    }
+    
+    .touchButton{
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 36px;
+      height: 36px;
+      background-size: 26px;
+      position: absolute;
+      padding: 8px;
+    }
+    
+    .closeSearchButton{ 
+      background-image: url("/images/close-popup.svg");
+      top: -8px;
+      right: -8px;
+    }
+
+    .toggleSearchButton{ 
+      background-image: url("/images/arrow-down.svg");
+      top: -8px;
+      right: 36px;
+    }
+
+    &.collapsed{
+      .toggleSearchButton{
+        background-image: url("/images/arrow-up.svg");
+      }
+      .searchInputGroupContainer{
+        top: 100%;
+        margin-top: -54px;
+        box-shadow: none;
+      }
+    }
+  
+    .clearSearchButton{
+      position: relative;
+      left: -28px;
+    }
+    .searchInputGroupContainer{
+      transition: top 0.2s, margin-top 0.2s;
+      -webkit-transition: top 0.2s, margin-top 0.2s;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background-color: white;
+      z-index: 2;
+    }
+    .searchInput{
+      width: 61.8%;
+      height: $mobile-textbox-height;
+    }
+
+    .searchClose{
+      line-height: $mobile-textbox-height + 10;
+    }
+  }
+
+  #bookmarksWidget{
+    .esriBookmarkItem{
+      height: 50px;
+      &.esriAddBookmark{
+        height: 28px;
+      }
+    }
+
+    .esriBookmarkEditBox{
+      height: 40px;
+    }
+    .esriBookmarkLabel{
+      padding-top: 16px;
+    }
+    .esriBookmarkEditImage, .esriBookmarkRemoveImage{
+      height: 50px;
+      background-position: 8px 14px;
+    }
+
+    .esriBookmarkLabel{
+      width: 224px;
+    }
+    .esriBookmarkEditBox{
+      width: 218px;
+    }
+  }
+
+  /* dijit mobile tweaks */
+  .dijitComboBox{
+    .dijitButtonNode{
+      height: 28px;
+      input.dijitInputField{
+        height: 28px;      
+      }
+    }
+  }
+
+  .dijitInputField.dijitInputContainer{
+    height: 30px;
+    .dijitInputInner{
+      height: 28px;
+    }
+  }
+  /* end dijit mobile tweaks */
+
+  .layerControlDijit{
+    .layerControlTableExpand{
+      width: 28px;
+      height: 26px;
+      line-height: 26px;
+    }
+    .layerControlTableCheck, .layerControlTableMenu{
+      width: 29px;
+      height: 27px;
+      line-height: 27px;
+    }
+    .layerControlTableCheck{
+      width: 32px;
+    }
+    .layerControlIcon, .layerControlMenuIcon {
+      font-size: 26px;
+    }
+    .layerControlUpdateIcon{
+      position: relative;
+      top: -3px;
+    }
+  }
+
+  td.dijitMenuItemLabel{
+    font-size: 16px;
+  }
+
+  .uploader-wrapper{
+    .filename{ width: 190px;}
+    .perc{ width: 82px; }
+    .progress{ width: 90px; }
+  }
+
+  #epChartContainer{
+    &.maximized{
+      right: 0;
+    }
+  }
+
+  #weather{
+    .widgetOptions{
+      .mblSliderH{
+        width: 180px;
+      }
+    }
+  }
+
+  #addDataLayers{
+    .information{ display: none; }
+  }
+
+  .searchInput{
+    &.stretchedForMenu{
+      width: 200px;
+    }
+  }
+
+  .pushButton{
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    img{
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+html.dj_ios{
+  .no-ios{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 569px){
+  form{
+    label{display: none;}
+    .submit{margin-left: 0;}
+    #btnLogin{ margin-left: 0; }
+    a.forgotpwd { display: block; margin-left: 0px; margin-top: $margin;}
+  }
+  form.newPassword{
+    text-align: center;
+    label{
+      &.hasNote{
+        margin-bottom: 0;
+      }
+      display:block;
+      width:auto;
+      text-align: center;
+    }
+    .note{display: none;}
+  }
+
+  #search #search_input{
+    max-width: 250px;
+  }
+
+  html.touch{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+
+    #sideMenu{
+      right: -$side-menu-small-mobile-width;
+      width: $side-menu-small-mobile-width;
+    }
+
+    .hide-small-screen{ display: none; }
+    .show-small-screen{ display: inline;}
+    #draw form input[type="file"]{
+      width: 78px;
+    }
+
+    .menuItemList .text{
+      max-width: 174px;
+    }
+
+    #searchQuery .category > .title .text{
+      max-width: 300px;
+    }
+
+    #bookmarksWidget{
+      .esriBookmarkLabel{
+        width: 184px;
+      }
+      .esriBookmarkEditBox{
+        width: 168px;
+      }
+    }
+    
+    .widgetOptions{
+      .mblSliderH{
+        top: 0;
+        width: 160px;
+      }
+      .option{
+        &.slider{
+          margin-bottom: $margin;
+        }
+        .dijitButtonNode{
+          max-width: 124px;
+          overflow: hidden;
+        }
+        &.textInput input[type="text"]{
+          max-width: 116px;
+        }
+      }
+    }
+
+    #print .printExportOptions{
+      top: 0;
+    }
+
+    .uploader-wrapper{
+      .filename{ width: 150px;}
+      .perc{ width: 84px; }
+      .progress{ width: 88px; }
+    }
+    
+    #weather{
+      .widgetOptions{
+        .mblSliderH{
+          width: 144px;
+          position: relative;
+          top: 10px;
+        }
+      }
+    }
+
+    .searchInput{
+      &.stretchedForMenu{
+        width: 160px;
+      }
+    }
+  }
+  #epChartContainer{
+    &.maximized{
+      padding: 0;
+      top: 0%;
+      height: 100%;
+      #epChart{box-shadow: none; }
+    }
+  }
+}
+@media only screen and (max-width: 421px){
+  #menuButton{
+    top: 50%;
+    right: -20px;
+    margin-top: -25px;
+    height: 50px;
+  }
+  html.touch{
+    #searchQuery{
+      .searchInput{
+        width: 50%;
+      }
+    }
+    #searchQuery .category > .title .text{
+      max-width: 200px;
+    }
+  }
+}
+@media only screen and (max-width: 321px){
+  #search #search_input{
+    max-width: 150px;
+  }
+}

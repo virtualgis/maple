@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteRule sax/?$ /?p=sax [R=301,L]
+RewriteRule test/?$ /?p=test [R=301,L]
+
+ExpiresDefault "access plus 0 seconds"
+
+AddType text/cache-manifest .appcache
+ExpiresByType text/cache-manifest "access plus 0 seconds"

@@ -1,0 +1,47 @@
+<div>
+	<div class="widgetOptions">
+		<div class="option">
+			<div class="label">Layout</div> <div class="dropdown" data-dojo-attach-point="layoutDropDownButton"></div>
+		</div>
+
+		<div class="option">
+			<div class="label">Format</div> <div class="dropdown" data-dojo-attach-point="formatDropDownButton"></div>
+		</div>
+		
+		<div class="option switch">
+			<div class="label">Preserve</div> <div data-dojo-type="dojox/mobile/Switch" leftLabel="Scale" rightLabel="Extent" value="on" style="width: 96px;" id="printPreserveOption"></div>
+		</div>
+
+		<div class="option textInput">
+			<div class="label">Title</div> <input type="text" value="" placeholder="Type here (optional)" data-dojo-attach-point="title" />
+		</div>
+		
+		<div class="printExportOptions" data-dojo-attach-point="printExportOptions">
+			<div class="option slider">
+				<div class="label">Image Width</div> <input type="number" min="0" max="8000" step="100" data-dojo-attach-point="width" id="printOptionWidth" value="${windowWidth}">
+				
+				<input type="range" data-dojo-type="maple/widgets/Slider" value="${windowWidth}" min="0" max="8000" step="100" data-dojo-props="hookTo:'printOptionWidth'"/>
+			</div>
+			<div class="option slider">
+				<div class="label">Image Height</div> <input type="number" min="0" max="8000" step="100" data-dojo-attach-point="height" id="printOptionHeight" value="${windowHeight}">
+				
+				<input type="range" data-dojo-type="maple/widgets/Slider" value="${windowHeight}" min="0" max="8000" step="100" data-dojo-props="hookTo:'printOptionHeight'"/>
+			</div>
+			<div class="option marginTop">
+				<div class="label">DPI</div> <div class="dropdown" data-dojo-attach-point="dpiDropDownButton"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="widgetActionButtons">
+		<div class="itemLoading hide" data-dojo-attach-point="exporting">
+			<img src="/images/spinner.gif" /> Exporting...
+		</div>
+		<div class="itemError hide" data-dojo-attach-point="error">
+			<img src="/images/warning.svg" />
+			<div class="errorMessage">An error occurred while exporting. Make sure you are connected to the internet or try again later.</div>
+		</div>
+
+		<button class="icon iconExport" data-dojo-type="dojox/mobile/Button" data-dojo-attach-event="onClick:print" data-dojo-attach-point="exportButton">Export</button>
+	</div>
+</div>

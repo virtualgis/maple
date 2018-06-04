@@ -1,0 +1,72 @@
+<div>
+	<div class="information">
+		To add one or more files press one of the buttons below, or simply drag &amp; drop the files on the map.
+	</div>
+
+	<button class="icon iconShapefile" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="shapefileUploadButton">Add Shape File (.zip)</button>
+
+	<br/>
+
+	<button class="icon iconGe" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="kmlUploadButton">Add <span class="hide-small-screen">Google Earth </span><span class="show-small-screen">G.E. </span>File (.kml, .kmz)</button>
+
+	<button class="icon iconGeoJson" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="geoJsonUploadButton">Add GeoJSON (.json)</button>
+
+	<hr/>
+
+	<button class="icon iconCsv" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="csvUploadButton">Add Points File (.csv)</button>
+	
+	<div class="widgetOptions csv">
+		<div class="option optionDropdown">
+			<div class="label">Projection</div> <div class="dropdown" data-dojo-attach-point="csvProjectionDropDownButton"></div>
+		</div>
+	</div>
+
+	<hr/>
+
+	<div class="widgetOptions styles">
+		<div class="option">
+			<div class="label color">Fill Color</div> <input type="text" data-dojo-attach-point="fillColor" value="#7F3FAFDC" class="colorPicker"/>
+		</div>
+		<div class="option">
+			<div class="label color">Outline Color</div> <input type="text" data-dojo-attach-point="outlineColor" value="#000000" class="colorPicker"/>
+		</div>
+		<div class="option optionDropdown">
+			<div class="label">Outline Style</div> <div class="dropdown" data-dojo-attach-point="outlineStyleDropDownButton"></div>
+		</div>
+		<div class="option optionDropdown">
+			<div class="label">Fill Style</div> <div class="dropdown" data-dojo-attach-point="fillStyleDropDownButton"></div>
+		</div>
+		<div class="option optionDropdown">
+			<div class="label">Point Style</div> <div class="dropdown" data-dojo-attach-point="pointStyleDropDownButton"></div>
+		</div>
+		<div class="option slider">
+			<div class="label">Line Thickness</div> <input type="number" min="0" max="5" step="1" data-dojo-attach-point="lineThickness" id="addDataLayersOptionLineThickness" value="2">
+			
+			<input type="range" data-dojo-type="maple/widgets/Slider" value="2" min="0" max="5" step="1" data-dojo-props="hookTo:'addDataLayersOptionLineThickness'"/>
+		</div>
+		<div class="option slider">
+			<div class="label">Point Size</div> <input type="number" min="0" max="100" step="1" data-dojo-attach-point="pointSize" id="addDataLayersOptionPointSize" value="12">
+			
+			<input type="range" data-dojo-type="maple/widgets/Slider" value="12" min="0" max="100" step="1" data-dojo-props="hookTo:'addDataLayersOptionPointSize'"/>
+		</div>
+	</div>
+
+	<div class="itemLoading hide" data-dojo-attach-point="loading">
+		<img src="/images/spinner.gif" /> <span data-dojo-attach-point="loadingText" />
+	</div>
+	<div data-dojo-attach-point="progressBox"></div>
+
+
+	<div class="uploader-wrapper relative hide" data-dojo-attach-point="shapeFileStatusWrapper">
+		<div class="filename" data-dojo-attach-point="shapeFileFilename"></div>
+		<div class="perc" data-dojo-attach-point="shapeFileStatus"></div>
+		<div class="progress">
+			<div data-dojo-attach-point="shapeFileStatusBar" class="bar" style="width: 100%;"></div>
+		</div>
+	</div>
+
+	<div class="errorBox hide" data-dojo-attach-point="error">
+		<img src="/images/warning.svg" />
+		<div class="errorMessage" data-dojo-attach-point="errorMessage"></div>
+	</div>
+</div>

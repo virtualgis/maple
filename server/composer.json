@@ -1,0 +1,8 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "~6.0",
+        "fire015/flintstone": "1.*",
+        "phpmailer/phpmailer": "^5.2",
+        "dburkart/scurvy": "^1.2"
+    }
+}

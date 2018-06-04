@@ -1,0 +1,26 @@
+<div>
+	<div class="instructions" data-dojo-attach-point="instructions"></div>
+
+    <div class="pushButton" title="Measure" data-dojo-attach-event="click:measureButtonClicked" data-dojo-attach-point="measureButton">
+		<img src="/images/route-identify.svg" />
+    </div>
+
+    <div class="searchInputGroupContainer">
+		<div class="searchInputGroup floated" data-dojo-attach-point="searchgroup">
+			<input autocomplete="off" autocapitalize="off" class="searchInput roundLeft stretchedForMenu" placeholder="${searchPlaceholder}" data-dojo-attach-point="searchbox" type="tel"/><div role="button" class="clearSearchButton inlined" tabindex="0" data-dojo-attach-point="clearSearchButton" title="Clear search"><span class="searchClose esriIconClose"></span><span class="searchSpinnerIcon inlined esriIconAjaxLoaderArrow" data-dojo-attach-point="searchSpinner"></span></div>
+		</div><div role="button" title="Search" class="floatSearchButton" tabindex="1" data-dojo-attach-point="searchButton">
+	      <span role="presentation" class="searchIcon esriIconZoom"></span>
+	    </div>
+	</div>
+	<div class="clear"></div>
+	<div class="noResultsBody hide" data-dojo-attach-point="noResults">
+		<div class="noResultsHeader">No results</div>
+		<div class="noResultsText">There were no results for "<span data-dojo-attach-point="noResultsKeyword"></span>".</div>
+	</div>
+	<div data-dojo-attach-point="hints">
+	</div>
+	<div class="itemError hide" data-dojo-attach-point="error">
+		<img src="/images/warning.svg" />
+		<div class="errorMessage" data-dojo-attach-point="errorMessage"></div>
+	</div>
+</div>

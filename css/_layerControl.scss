@@ -1,0 +1,234 @@
+/* LayerControl */
+.layerControlDijit{
+  .vectorLayerContainer {
+    border-bottom: solid 1px #DDD;
+    margin-bottom: $margin / 2;
+
+    .layerControl:last-child .layerControlExpand{
+      border-bottom: none;
+    }
+  }
+  .vectorLabelContainer {
+      font-size: 16px;
+      font-weight: 600;
+      padding-bottom: 4px;
+  }
+
+  .overlayLayerContainer {}
+
+  .overlayLabelContainer {
+      font-size: 16px;
+      font-weight: 600;
+      padding-bottom: 4px;
+  }
+
+  .layerControl {
+      padding-bottom: 6px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+
+  .layerControlExpand {
+      border-bottom: solid 1px #DDD;
+  }
+
+  .layerControlTable {
+      width: 100%;
+  }
+
+  .layerControlTable tr {
+      vertical-align: middle;
+  }
+
+  .layerControlTable td {
+      padding: 0;
+  }
+
+  .layerControlTableExpand {
+      cursor: pointer;
+      width: 18px + $margin / 2;
+      height: 17px;
+      line-height: 17px;
+
+      .layerControlIcon{
+        padding-left: $margin / 2;
+      }
+  }
+
+  .layerControlTableCheck,
+  .layerControlTableMenu {
+      cursor: pointer;
+      width: 19px;
+      height: 17px;
+      line-height: 17px;
+  }
+  .layerControlTableCheck{
+    width: 22px;
+  }
+
+  .layerControlTableLabel {
+      font-size: 16px;
+      height: 17px;
+      line-height: 17px;
+      cursor: default;
+      max-width: 222px;
+      word-wrap: break-word;
+  }
+
+  .layerControlTableUpdate {
+      width: 21px;
+      height: 17px;
+      line-height: 17px;
+      text-align: center;
+  }
+
+  .layerControlIndent {
+      padding-left: 22px;
+  }
+
+  .layerControlIcon {
+      font-size: 17px;
+  }
+
+  .layerControlUpdateIcon {
+      font-size: 12px;
+  }
+
+  .layerControlMenuIcon {
+      font-size: 16px;
+      color: #000;
+  }
+
+  .layerControlMenuIcon:hover {
+      color: #111;
+  }
+
+  .layerControlCheckIconOutScale {
+      color: #BBB;
+  }
+
+  /* not in use - retain for links */
+  .layerControlClick {
+      cursor: pointer;
+      color: #1f78af;
+      text-decoration: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+
+  .layerControlClick:hover {
+      text-decoration: underline;
+  }
+
+  .layerControlLegendTable tr {
+      vertical-align: middle;
+  }
+
+  .layerControlLegendImage > img {
+      border: none;
+      padding: 0;
+  }
+
+  .layerControlLegendLabel {
+      padding: 0 0 0 4px;
+  }
+
+  /* temp esri/Legend overrides */
+  .esriLegendService td {
+      padding: 0;
+  }
+
+  .esriLegendGroupLayer, .esriLegendLayerLabel {
+      padding: 0;
+  }
+
+  .esriLegendServiceLabel {
+      display: none;
+  }
+
+  .menuLink {
+      color: #369;
+      text-decoration: none;
+  }
+
+  .menuLink:hover {
+      color: #5196DB;
+      text-decoration: underline;
+      cursor: pointer;
+  }
+} 
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot?16b0vm');
+  src:url('fonts/icomoon.eot?#iefix16b0vm') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?16b0vm') format('truetype'),
+    url('fonts/icomoon.woff?16b0vm') format('woff'),
+    url('fonts/icomoon.svg?16b0vm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="imicon-"], [class*=" imicon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.imicon-refresh:before {
+  content: "\f021";
+}
+.imicon-caret-down:before {
+  content: "\f0d7";
+}
+.imicon-caret-right:before {
+  content: "\f0da";
+}
+.imicon-caret-square-o-down:before {
+  content: "\f150";
+}
+.imicon-checkbox-checked:before {
+  content: "\e600";
+}
+.imicon-checkbox-unchecked:before {
+  content: "\e601";
+}
+.imicon-zoom-in:before {
+  content: "\e900";
+}
+.imicon-spin {
+    -webkit-animation: imicon-spin 1s infinite linear;
+    animation: imicon-spin 1s infinite linear;
+}
+@-webkit-keyframes imicon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes imicon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

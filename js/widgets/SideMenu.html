@@ -1,0 +1,227 @@
+<div>
+	<div id="sideMenuToggleButton">
+		<img src="/images/close.svg" id="btnCloseSideMenu" />
+	</div>
+	<div id="accordion">
+	    <div class="item" data-widget="layerList" data-dojo-attach-point="layerList">
+			<div class="title">
+				<img src="images/layers.svg" alt="" />
+				<div class="text">Layer List</div>
+			</div>
+    		<div class="content">
+    			<div id="layerList" class="hide"></div>
+    			<div class="itemLoading" id="layerListLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+	    <div class="item" data-widget="legend" data-dojo-attach-point="legend">
+			<div class="title">
+				<img src="images/legend.svg" alt="" />
+				<div class="text">Legend</div>
+			</div>
+    		<div class="content">
+    			<div id="legendContainer">
+    				<div id="legendControl">
+    					<div class="label">Current Scale Only</div> <div data-dojo-type="dojox/mobile/Switch" leftLabel="On" rightLabel="Off" value="on" id="legendShowAll"></div>
+    				</div>
+    				<div id="legend">
+    				</div>
+				</div>	
+				<div class="itemLoading" id="legendLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+	    <div class="item">
+			<div class="title">
+				<img src="images/basemaps.svg" alt="" />
+				<div class="text">Basemaps</div>
+			</div>
+    		<div class="content">
+    			<div id="basemapGallery">
+				</div>	
+				<div class="itemLoading" id="basemapsLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+	    <div class="item" data-widget="measure" data-dojo-attach-point="measure">
+			<div class="title">
+				<img src="images/measure.svg" alt="" />
+				<div class="text">Measure</div>
+			</div>
+    		<div class="content">
+    			<div id="measurementContainer">
+	    			<div id="measurement">
+					</div>
+					<div class="widgetActionButtons">
+						<button class="submit icon iconClear clearMeasurement hide" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="clearMeasurementButton">Clear Measurement</button>
+					</div>
+				</div>
+				<div class="itemLoading" id="measurementLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+	    <div class="item hide"  data-widget="routes" data-dojo-attach-point="routes">
+			<div class="title">
+				<img src="/images/route.svg" alt="" />
+				<div class="text" data-dojo-attach-point="routesWidgetName">Routes</div>
+			</div>
+    		<div class="content">
+    			<div id="routesContainer">
+	    			<div id="routes">
+					</div>	
+				</div>
+				<div class="itemLoading" id="routesLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+	    <div class="item" data-widget="draw" data-dojo-attach-point="draw">
+			<div class="title">
+				<img src="images/draw.svg" alt="" />
+				<div class="text">Draw</div>
+			</div>
+    		<div class="content noscroll">
+    			<div id="draw">
+				</div>
+				<div class="itemLoading" id="drawLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+		<div id="bookmarksWidget">
+		</div>	
+
+		<div class="item hide" data-widget="editWidget" data-dojo-attach-point="editWidget">
+			<div class="title">
+				<img src="images/edit.svg" alt="" />
+				<div class="text">Edit Features</div>
+			</div>
+    		<div class="content noscroll">
+    			<div id="editWidget">
+				</div>
+				<div class="itemLoading" id="editWidgetLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+		<div id="locateWidget">
+		</div>	
+		
+		<div id="queryWidget">
+		</div>
+
+		<div class="item no-ios" data-widget="addDataLayers" data-dojo-attach-point="addDataLayers">
+			<div class="title">
+				<img src="images/addContent.svg" alt="" />
+				<div class="text">Add Data/Layers</div>
+			</div>
+    		<div class="content noscroll">
+    			<div id="addDataLayers">
+				</div>
+				<div class="itemLoading" id="addDataLayersLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+	    <div class="item" data-widget="elevationProfile" data-dojo-attach-point="elevationProfile">
+			<div class="title">
+				<img src="images/elevation.svg" alt="" />
+				<div class="text">Elevation Profile</div>
+			</div>
+    		<div class="content noscroll">
+    			<div id="elevationProfile">
+				</div>
+				<div class="itemLoading" id="elevationProfileLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+	    <div class="item hide" data-widget="weather" data-dojo-attach-point="weather">
+			<div class="title">
+				<img src="images/weather.svg" alt="" />
+				<div class="text">Live Weather Radar</div>
+			</div>
+    		<div class="content noscroll">
+    			<div id="weather">
+				</div>
+				<div class="itemLoading" id="weatherLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+	    <div class="item hide" data-widget="eTime" data-dojo-attach-point="eTime">
+			<div class="title">
+				<img src="images/clock.svg" alt="" />
+				<div class="text">Time Slider</div>
+			</div>
+    		<div class="content noscroll">
+    			<div id="eTime">
+				</div>
+				<div class="itemLoading" id="eTimeLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+
+	    <div id="linksWidget">
+		</div>	
+
+	    <div class="item" data-widget="export" data-dojo-attach-point="export">
+			<div class="title">
+				<img src="images/exportFile.svg" alt="" />
+				<div class="text">Export</div>
+			</div>
+    		<div class="content noscroll">
+    			<div id="print">
+				</div>
+				<div class="itemLoading" id="printLoading">
+					<img src="/images/spinner.gif" /> Loading...
+				</div>
+	    	</div>
+	    </div>
+	</div>
+
+
+	<div id="menuFooter">
+		<button id="btnLockUnlockMenu" class="submit" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="btnLockUnlockMenu"></button>
+		<button id="btnSwitchRole" class="submit" data-dojo-type="dojox/mobile/Button" data-dojo-props="onClick:function(){dlgSwitchProfile.show();}" data-dojo-attach-point="btnSwitchRole">Switch Role</button>
+		<button id="btnLogout" class="submit" data-dojo-type="dojox/mobile/Button" data-dojo-attach-event="onClick:confirmLogout" data-dojo-attach-point="btnLogout">Logout</button>
+	</div>
+
+	<div id="dlgConfirmLogout" data-dojo-type="dojox/mobile/SimpleDialog" data-dojo-props="modal:true" data-dojo-id="dlgConfirmLogout">
+	  <div class="mblSimpleDialogTitle">Are you sure?</div>
+	  <div class="mblSimpleDialogText"></div>
+	  <button id="btnOkDlgConfirmLogout" data-dojo-type="dojox/mobile/Button" class="mblSimpleDialogButton small" data-dojo-props="onClick:function(e){dlgConfirmLogout.hide(); e.stopPropagation();}">&nbsp;&nbsp;Cancel&nbsp;&nbsp;</button>
+	  <button id="btnLogoutDlgConfirmLogout" data-dojo-type="dojox/mobile/Button" class="mblSimpleDialogButton small" data-dojo-props="onClick:function(){dlgConfirmLogout.hide();}">&nbsp;&nbsp;Logout&nbsp;&nbsp;</button>
+	</div>
+
+	<div id="dlgExportCompleted" data-dojo-type="dojox/mobile/SimpleDialog" data-dojo-props="modal:true" data-dojo-id="dlgExportCompleted">
+	  <div class="mblSimpleDialogTitle">Export Completed</div>
+	  <div class="mblSimpleDialogText">Click the button below to open your export file.</div>
+	  <button data-dojo-type="dojox/mobile/Button" class="mblSimpleDialogButton small" data-dojo-attach-point="exportOpenFile">&nbsp;&nbsp;Open File&nbsp;&nbsp;</button>
+	  <button data-dojo-type="dojox/mobile/Button" class="mblSimpleDialogButton small" data-dojo-props="onClick:function(){dlgExportCompleted.hide();}">&nbsp;&nbsp;Close&nbsp;&nbsp;</button>
+	</div>
+
+	<div id="dlgSwitchProfile" data-dojo-type="dojox/mobile/SimpleDialog" data-dojo-props="modal:true" data-dojo-id="dlgSwitchProfile">
+	  <div class="mblSimpleDialogTitle">Select a Role</div>
+	  <form>
+	  	<div class="mblSimpleDialogButton mblSimpleDialogSelect" id="dlgSwitchProfileSelector"></div>
+	  </form>
+	  <button data-dojo-type="dojox/mobile/Button" class="small" data-dojo-props="onClick:function(e){dlgSwitchProfile.hide(); e.stopPropagation();}">&nbsp;&nbsp;Cancel&nbsp;&nbsp;</button>
+	  <button data-dojo-type="dojox/mobile/Button" class="small" data-dojo-attach-event="onClick:switchRole">&nbsp;&nbsp;Switch&nbsp;&nbsp;</button>
+	</div>
+</div>

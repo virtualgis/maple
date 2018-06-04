@@ -1,0 +1,27 @@
+<div id="loginView">
+	<h1 data-dojo-type="dojox/mobile/Heading" id="appTitle">${title}</h1>
+	<div data-dojo-type="maple/helpers/WheelScrollableView">
+		<div class="textCenter" id="loginScreen">
+			<div>
+				<div class="errorBox hide" data-dojo-attach-point="warning">
+					<img src="/images/warning.svg" />
+					<div class="errorMessage" data-dojo-attach-point="warningMessage"></div>
+				</div>
+			</div>
+
+			<img src="${logo}" alt="" id="mainLogo" onerror="this.parentNode.removeChild(this);"/><br/>
+
+			<form id="loginForm">
+				<label for="username">Username:</label> <input type="text" id="username" name="username" value="${lastUsername}" placeholder="Username" required="true" autocapitalize="off" autocorrect="off"/><br/>
+				<label for="password">Password:</label> <input id="password" name="password" placeholder="Password" value="" required="true" type="password" /><br/>
+				<div id="profileSelectorContainer"></div>
+				<button id="btnLogin" class="submit" data-dojo-type="dojox/mobile/Button">Login</button> <a data-dojo-attach-event="onClick:forgotPwd" class="forgotpwd" href="javascript:void(0);">Forgot Your Password?</a>
+			</form>
+
+
+			<div id="disclaimer">${disclaimer}</div>
+
+			<div id="loginStandby" data-dojo-type="maple/widgets/Standby" data-dojo-props="target:'body'"></div>
+		</div>
+	</div>
+</div>

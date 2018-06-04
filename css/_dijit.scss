@@ -1,0 +1,703 @@
+/* Dijit classes (for measurement widget, edit widget) */
+.dijitInline {
+    display: inline-block;
+    border: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+.dijitReset {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    line-height: normal;
+    color: inherit;
+}
+.dbootstrap .dijitRuleLabelsContainerH {
+    padding-bottom: 5px;
+}
+.dijitRuleContainer {
+    position: relative;
+    overflow: visible;
+    margin-top: 4px;
+}
+.dijitRuleLabelContainerH {
+    text-align: center;
+    display: inline-block;
+}
+.dijitRuleLabelContainer {
+    position: absolute;
+}
+.dijitArrowButtonChar{
+  font-size: 0.8em;
+}
+.dijitDropDownButton{
+  background-color: white;
+}
+.dijitSelect, .dijitSelect *, .dijitButtonNode, .dijitButtonNode * {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.dijitButtonNode {
+    border: 1px solid gray;
+    margin: 0;
+    line-height: normal;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+}
+.dijitButtonContents {
+    display: block;
+}
+.dijitStretch {
+    white-space: nowrap;
+    background-repeat: repeat-x;
+}
+.dijitButtonNode * {
+    vertical-align: middle;
+}
+.dijitToggleButtonIconChar {
+    display: none !important;
+}
+.dijitButtonText{
+    padding: 0 0.3em;
+    text-align: center;
+}
+.dijitOffScreen {
+    position: absolute !important;
+    left: -10000px !important;
+    top: -10000px !important;
+}
+.dijitContentPane {
+    display: block;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.dijitDisplayNone {
+    display: none !important;
+}
+.dijitPopup {
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    background-color: transparent;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+}
+.dijitMenuTable {
+    border-collapse: separate;
+    border-spacing: 0 0;
+    padding: 0;
+    border-width: 0;
+    background-color: white;
+}
+.dijitMenu {
+    background-color: #ffffff;
+    border: 1px solid #759dc0;
+    text-align: left;
+    white-space: nowrap;
+    padding: .1em .2em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.dijitMenuItem {
+    color: #000000;
+    text-align: left;
+    white-space: nowrap;
+    padding: .1em .2em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    &:focus{
+      outline: 0
+    };
+}
+.dijitMenu .dijitMenuItem td, .dijitComboBoxMenu .dijitMenuItem {
+    padding: 2px;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: #ffffff;
+    height: 32px;
+    line-height: 28px;
+}
+.dijitMenu .dijitMenuItem:hover td, .dijitComboBoxMenu .dijitMenuItem:hover{
+  background-color: #abd6ff;
+}
+.dijitMenu .dijitMenuItem.dijitMenuItemDisabled{
+  color: #ccc;
+  &:hover td{
+    background-color: #fff;
+  }
+}
+.dj_webkit .dijitMenuTable td[colspan="2"] {
+    border-right: hidden;
+}
+.dijitMenuExpandA11y{
+  display: none;
+}
+td.dijitMenuItemLabel {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.dijitMenuItemLabel {
+    font-family: verdana,helvetica !important;
+    font-size: 12px;
+}
+.dijitMenuItemLabel {
+    vertical-align: middle;
+}
+
+.dijitTooltipContainer {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    padding: 9px 14px;
+    color: black;
+    font-size: small;
+}
+.dijitTooltipConnector, .dijitTooltipConnector:after{
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border-color: transparent;
+  border-style: solid;
+}
+.dijitTooltipFocusNode {
+    padding: 2px 2px 2px 2px;
+}
+.dijitSlider {
+    color: #999;
+}
+.dijitSliderDecorationH {
+    width: 100%;
+}
+.dijitSliderDecoration{
+  text-align: center;
+}
+.dijitSliderButtonContainer {
+    text-align: center;
+    height: 0;
+}
+.dijitSliderButtonContainer * {
+    cursor: pointer;
+}
+.dijitSliderBarContainerH {
+    position: relative;
+    z-index: 0;
+}
+.dijitMenuSeparator{
+  margin: 9px 1px;
+}
+.dijitMenuSeparatorTop{
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0;
+  margin-top: 3px;
+  font-size: 1px;
+}
+.dijitSliderImageHandle, .dijitSliderImageHandle{
+  margin: 0;
+  padding: 0;
+  position: relative !important;
+  border: 8px solid gray;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+}
+.dijitSliderBarH {
+    height: 1em;
+}
+.dijitSliderBar {
+    border-style: solid;
+    border-color: black;
+    cursor: pointer;
+}
+.dijitSliderProgressBar, .dijitSliderBumperH.dijitSliderLeftBumper{
+  border: none;
+  background-color: #049cdb;
+  background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #049cdb), color-stop(1, #0385ba));
+  background-image: -webkit-linear-gradient(center top, #049cdb 0%, #0385ba 100%);
+  background-image: -moz-linear-gradient(center top, #049cdb 0%, #0385ba 100%);
+  background-image: -o-linear-gradient(center top, #049cdb 0%, #0385ba 100%);
+  background-image: -ms-linear-gradient(center top, #049cdb 0%, #0385ba 100%);
+  background-image: linear-gradient(center top, #049cdb 0%, #0385ba 100%);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+}
+.dijitSliderRemainingBar, .dijitSliderBumperH{
+  border-color: transparent;
+  background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #f5f5f5), color-stop(1, #f9f9f9));
+  background-image: -webkit-linear-gradient(center top, #f5f5f5 0%, #f9f9f9 100%);
+  background-image: -moz-linear-gradient(center top, #f5f5f5 0%, #f9f9f9 100%);
+  background-image: -o-linear-gradient(center top, #f5f5f5 0%, #f9f9f9 100%);
+  background-image: -ms-linear-gradient(center top, #f5f5f5 0%, #f9f9f9 100%);
+  background-image: linear-gradient(center top, #f5f5f5 0%, #f9f9f9 100%);
+  -webkit-box-shadow: inset 2px 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 2px 1px 2px rgba(0,0,0,0.1);
+}
+.dijitSliderRemainingBar {
+    width: 100% !important;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 1;
+    border-width: 1px 0;
+}
+.dijitSliderProgressBar{
+  position: absolute !important;
+  width: 0;
+  vertical-align: middle;
+  overflow: visible;
+  z-index: 1;
+}
+.dijitSliderMoveableH {
+    right: 0;
+}
+.dijitSliderMoveable {
+  z-index: 99;
+  position: absolute !important;
+  display: block;
+  vertical-align: middle;
+}
+.dijitSliderImageHandleH{
+  -webkit-box-shadow: 1px 0 2px rgba(0,0,0,0.15);
+  box-shadow: 1px 0 2px rgba(0,0,0,0.15);
+  width: 11px;
+  height: 1.5em;
+}
+.dijitSliderImageHandle{
+  border: 1px solid rgba(0,0,0,0.15);
+  background-color: #fff;
+}
+.dijitSliderImageHandleH {
+    left: 50%;
+    top: -5px;
+    vertical-align: top;
+}
+.esriSymbolEditor{
+  *:focus{outline: none;}
+  padding: $margin / 2;
+  background-color: #f6f6f6;
+  .esriFormField{
+    margin-top: $margin / 2;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+}
+.dijitColorPalette{
+  background-color: white;
+  border: 1px solid #BFBFBF;
+  border-radius: 4px;
+  padding: $margin / 4;
+}
+.dijitPaletteImg{
+  width: 19px;
+  height: 19px;
+  img{
+    width: 17px;
+    height: 17px;
+  }
+}
+.dijitToasterContent {
+  padding: 0.25em;
+  background: #04B944;
+}
+
+.dijitToolbar{
+    border-bottom: 1px solid #b5bcc7;
+    background-color: #efefef;
+    background-image: url(images/standardGradient.png);
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+    padding: 2px 0 2px 4px;
+    zoom: 1;
+}
+
+.dijitComboButton{
+  border-collapse: separate;
+}
+
+.dijitButtonNodeHover, .dijitDownArrowButtonHover{
+  background-color: #eee;
+}
+
+
+.dijitValidationTextBox .dijitValidationContainer{
+  display: none;  
+}
+
+
+.dijitCalendarContainer {
+    display: inline-block;
+    height: 225px;
+    text-align: center;
+    top: 0px;
+    vertical-align: middle;
+    width: 203px;
+    background: rgb(207, 229, 250) linear-gradient(rgb(255, 255, 255) 0px, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0) 100%) repeat-x scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid rgb(181, 188, 199);
+    border-radius: 4px 4px 4px 4px;
+    padding: 6px 5px 3px;
+
+    .dijitCalendarMonthContainer{
+      height: 28px;
+      text-align: center;
+      width: 203px;
+    }
+    .dijitCalendarArrow{
+      height: 18px;
+      text-align: center;
+      width: 18px;
+      &.dijitCalendarDecrementArrow{
+        float: left;
+      }
+      &.dijitCalendarIncrementArrow{
+        float: right;
+      }
+    }
+
+    .dijitCalendarIncrementControl{
+      cursor: pointer;
+      height: 16px;
+      text-align: center;
+      vertical-align: middle;
+      width: 18px;
+      background: rgba(0, 0, 0, 0) url(/images/dijit/calendarArrows.png) no-repeat scroll 0% 0% / auto padding-box border-box;
+      &.dijitCalendarDecrease{
+
+      }
+      &.dijitCalendarIncrease{
+        background-position: -18px 0px;
+      }
+    }
+
+    .dijitA11ySideArrow{
+      display: none;
+      text-align: center;
+    }
+
+    .dijitInline.dijitDropDownButton {
+        display: inline-block;
+        height: 28px;
+        text-align: center;
+        vertical-align: middle;
+        width: 100.625px;
+    }
+
+    .dijitInline.dijitButtonNode {
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+        cursor: pointer;
+        display: inline-block;
+        height: 26px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 93.625px;
+        background: rgba(0, 0, 0, 0) none repeat-x scroll 0% 0% / auto padding-box border-box;
+        border: 1px solid rgb(181, 188, 199);
+        border-radius: 4px 4px 4px 4px;
+        padding: 0px 3px 0px 2px;
+        transition: background-color 0.3s ease 0s;
+    }
+
+    .dijitButtonContents.dijitDownArrowButton {
+        cursor: pointer;
+        display: block;
+        height: 26px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 93.625px;
+        background: rgba(0, 0, 0, 0) none repeat-x scroll 0% 0% / auto padding-box border-box;
+    
+      .dijitIcon.dijitNoIcon, .dijitArrowButtonChar{
+        cursor: pointer;
+        display: none;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+      }
+    }
+
+    .dijitCalendarDateLabel{
+      cursor: pointer;
+      display: inline-block;
+      height: 22px;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: 28px;
+      margin: 0px -4px 0px 0px;
+      padding: 1px 0px 3px;
+    }
+
+    .dijitCalendarYearLabel{
+      bottom: 0px;
+      cursor: pointer;
+      height: 1px;
+      left: 0px;
+      position: relative;
+      right: 0px;
+      text-align: center;
+      top: 0px;
+      vertical-align: middle;
+      visibility: hidden;
+      white-space: nowrap;
+      width: 82.625px;
+      overflow: hidden;
+    }
+
+    .dijitCalendarMonthLabel{
+      cursor: pointer;
+      height: 21px;
+      text-align: center;
+      vertical-align: middle;
+      visibility: hidden;
+      white-space: nowrap;
+      width: 74.625px;
+    }
+
+    .dijitCalendarCurrentMonthLabel{
+      visibility: visible;
+      position: absolute;
+      top: 10px;
+    }
+
+    .dijitArrowButtonInner{
+      display: none;
+    }
+
+    table{
+      clear: both;
+      height: 171px;
+      text-align: center;
+      width: 203px;
+      border-spacing: 0px 0px;
+      thead{
+        height: 21px;
+        text-align: center;
+        width: 203px;
+        
+
+        tr{
+          height: 21px;
+          text-align: center;
+          vertical-align: middle;
+          width: 203px;
+
+          .dijitCalendarDayLabelTemplate{
+            height: 18px;
+            vertical-align: middle;
+            width: 23px;
+            border-bottom: 1px solid rgb(181, 188, 199);
+            padding: 0px 3px 2px;
+
+            .dijitCalendarDayLabel{
+              text-align: center;
+              font: normal normal bold normal 14.544px / normal "Times New Roman";
+              padding: 0px 4px;
+            }
+          }
+        }
+
+        .dijitCalendarBodyContainer{
+          background: #fff;
+          height: 150px;
+          text-align: center;
+          width: 203px;
+
+          .dijitCalendarWeekTemplate{
+            height: 25px;
+            text-align: center;
+            vertical-align: middle;
+            width: 203px;
+          }
+
+          .dijitCalendarDateTemplate{
+            cursor: pointer;
+            height: 24px;
+            letter-spacing: 0.7272px;
+            text-align: center;
+            vertical-align: middle;
+            width: 29px;
+            background: rgb(229, 242, 254) none repeat scroll 0% 0% / auto padding-box border-box;
+            border-bottom: 1px solid rgb(211, 211, 211);
+          }
+
+
+          td > span.dijitCalendarDateLabel{
+            color: rgb(117, 157, 192);
+            cursor: pointer;
+            display: block;
+            height: 16px;
+            letter-spacing: 0.7272px;
+            text-align: center;
+            width: 18px;
+            column-rule-color: rgb(117, 157, 192);
+            background: rgba(171, 212, 251, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+            border: 1px solid rgb(229, 242, 254);
+            outline: rgb(117, 157, 192) none 0px;
+            padding: 3px 5px 3px 4px;
+            transition: background-color 0.35s ease 0s, border 0.35s ease 0s;
+          }
+        }
+      }
+    }
+
+    .dijitCalendarBodyContainer{
+      background: #fff;
+    }
+
+    .dijitCalendarYearContainer{
+      height: 26px;
+      text-align: center;
+      vertical-align: middle;
+      width: 203px;
+
+      .dijitCalendarYearLabel{
+        height: 24px;
+        text-align: center;
+        white-space: nowrap;
+        width: 203px;
+        padding: 2px 0px 0px;
+        visibility: visible;
+
+        .dijitCalendarPreviousYear, .dijitCalendarSelectedYear, .dijitCalendarNextYear{
+          cursor: pointer;
+          display: inline-block;
+          height: 20px;
+          text-align: center;
+          vertical-align: middle;
+          white-space: nowrap;
+          width: 34.0313px;
+          margin: 0px 9.35906px 0px 0px;
+          padding: 1px 6px;
+        }
+
+        .dijitCalendarSelectedYear{
+          font-weight: bold;
+        }
+      }
+    }
+  .dijitCalendarPreviousMonth,.dijitCalendarNextMonth{
+    background-color: #eee;
+  }
+}
+
+.dijitInputField.dijitInputContainer{
+  overflow: hidden;
+  float: none !important;
+  position: relative;
+  height: 26px;
+  input.dijitInputInner{
+    height: 24px;
+    padding-left: 4px;
+    border: 1px solid #808080;
+  }
+}
+
+.dijitComboBox{
+  .dijitArrowButtonContainer{
+    float: right;
+  }
+  .dijitButtonNode{
+    input.dijitInputField{
+      width: 19px; 
+      padding-left: 4px;
+      height: 23px;
+    }
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.dijitProgressBarEmpty{
+  background-color: #ffffff;
+  border-color: #759dc0;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid black;
+  z-index: 0;
+}
+.dijitProgressBarIndeterminateHighContrastImage{
+  display: none;
+}
+
+.dijitProgressBarFull{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  border: 0px solid #759dc0;
+  border-right-width: 1px;
+  -webkit-transition-property: width;
+  -moz-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+
+.dijitProgressBarLabel{
+    color: #000000;
+    display: block;
+    position: static;
+    width: 100%;
+    text-align: center;
+    background-color: transparent !important;
+}
+.dijitProgressBarIndeterminate .dijitProgressBarTile{
+  background: #efefef url(/images/progressBarAnim.gif) repeat-x top;
+}
+.dijitProgressBarTile{
+  width: 100%;
+  height: 100px;
+  background-color: #abd6ff;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.93) 0px, rgba(255, 255, 255, 0.41) 1px, rgba(255, 255, 255, 0.7) 2px, rgba(255, 255, 255, 0) 100%);
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.93) 0px, rgba(255, 255, 255, 0.41) 1px, rgba(255, 255, 255, 0.7) 2px, rgba(255, 255, 255, 0) 100%);
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.93) 0px, rgba(255, 255, 255, 0.41) 1px, rgba(255, 255, 255, 0.7) 2px, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.93) 0px, rgba(255, 255, 255, 0.41) 1px, rgba(255, 255, 255, 0.7) 2px, rgba(255, 255, 255, 0) 100%);
+  background-attachment: scroll;
+
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.dijitProgressBar{
+  margin: 0px 0 2px 0;
+}
+
+.dijitEditorIcon{
+  background-image: url(/images/dijit/icons/editorIconsEnabled.png);
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+}
+
+.dijitDisabled .dijitEditorIcon{
+  background-image: url(/images/dijit/icons/editorIconsDisabled.png);
+}
+
+.dijitEditorIconUndo{
+  background-position: -144px;
+}
+
+.dijitEditorIconRedo{
+  background-position: -162px;
+}

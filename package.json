@@ -1,0 +1,11 @@
+{
+    "name": "Maple",
+    "description": "A modern, free and open-source web mapping application with built-in migration support for legacy Flex Viewer applications.",
+    "version": "1.0.0",
+    "homepage": "https://github.com/virtualgis/maple",
+    "dojoBuild": "app.profile.js",
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-sass": "^4.0.1"
+    }
+}

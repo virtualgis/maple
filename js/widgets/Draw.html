@@ -1,0 +1,109 @@
+<div>
+	<a title="Draw Point" class="button point" data-dojo-attach-event="onClick:setDrawPoint"></a>
+	<a title="Draw Line" class="button line" data-dojo-attach-event="onClick:setDrawLine"></a>
+	<a title="Draw Freehand Line" class="button freeline" data-dojo-attach-event="onClick:setDrawFreeLine"></a>
+	<a title="Draw Rectangle" class="button rectangle" data-dojo-attach-event="onClick:setDrawRectangle"></a>
+	<a title="Draw Circle" class="button circle" data-dojo-attach-event="onClick:setDrawCircle"></a>
+	<a title="Draw Ellipse" class="button ellipse" data-dojo-attach-event="onClick:setDrawEllipse"></a>
+	<a title="Draw Polygon" class="button polygon" data-dojo-attach-event="onClick:setDrawPolygon"></a>
+	<a title="Draw Freehand Polygon" class="button freepolygon" data-dojo-attach-event="onClick:setDrawFreePolygon"></a>
+	<a title="Add Text" class="button text" data-dojo-attach-event="onClick:setDrawText"></a>
+	<a title="Draw GPS Location" class="button gpslocation" data-dojo-attach-event="onClick:setDrawGPSLocation"></a>
+
+	<div class="widgetOptions" data-dojo-attach-point="drawOptions">
+		<div class="option text textInput">
+			<div class="label">Text</div> <input type="text" value="" placeholder="Type here" data-dojo-attach-point="text" />
+		</div>
+
+		<div class="option text optionDropdown">
+			<div class="label">Font</div> <div class="dropdown" data-dojo-attach-point="textFontDropDownButton"></div>
+		</div>
+
+		<div class="option gps">
+			<div class="label status" data-dojo-attach-point="gpsStatus">To draw your GPS location, press anywhere on the map.</div>
+		</div>
+
+		<div class="option point gps">
+			<div class="label color"><span class="point gps">Marker </span>Color</div> <input type="text" data-dojo-attach-point="markerColor" value="#7F3FAFDC" class="colorPicker"/>
+		</div>
+		<div class="option text">
+			<div class="label color">Color</div> <input type="text" data-dojo-attach-point="fontColor" value="#FFFFFF" class="colorPicker"/>
+		</div>
+		<div class="option shape">
+			<div class="label color">Fill Color</div> <input type="text" data-dojo-attach-point="fillColor" value="#7F3FAFDC" class="colorPicker"/>
+		</div>
+		<div class="option point shape gps">
+			<div class="label color">Outline Color</div> <input type="text" data-dojo-attach-point="outlineColor" value="#000000" class="colorPicker"/>
+		</div>
+		<div class="option line">
+			<div class="label color">Line Color</div> <input type="text" data-dojo-attach-point="lineColor" value="#3FAFDC" class="colorPicker"/>
+		</div>
+		<div class="option point gps optionDropdown">
+			<div class="label">Style</div> <div class="dropdown" data-dojo-attach-point="pointStyleDropDownButton"></div>
+		</div>
+		<div class="option line shape optionDropdown">
+			<div class="label"><span class="shape">Outline </span>Style</div> <div class="dropdown" data-dojo-attach-point="lineStyleDropDownButton"></div>
+		</div>
+		<div class="option shape optionDropdown">
+			<div class="label color">Fill Style</div> <div class="dropdown" data-dojo-attach-point="shapeStyleDropDownButton"></div>
+		</div>
+		<div class="option point gps slider">
+			<div class="label">Size</div> <input type="number" min="0" max="100" step="1" data-dojo-attach-point="size" id="drawOptionSize" value="12">
+			
+			<input type="range" data-dojo-type="maple/widgets/Slider" value="12" max="100" data-dojo-props="hookTo:'drawOptionSize'"/>
+		</div>
+		<div class="option text slider">
+			<div class="label">Size</div> <input type="number" min="0" max="100" step="1" data-dojo-attach-point="fontSize" id="drawOptionFontSize" value="20">
+			
+			<input type="range" data-dojo-type="maple/widgets/Slider" value="20" max="100" data-dojo-props="hookTo:'drawOptionFontSize'"/>
+		</div>
+		<div class="option point gps text slider">
+			<div class="label">Angle</div> <input type="number" min="-360" max="360" step="15" data-dojo-attach-point="angle" id="drawOptionAngle" value="0">
+			
+			<input type="range" data-dojo-type="maple/widgets/Slider" value="0" min="-360" max="360" step="15" data-dojo-props="hookTo:'drawOptionAngle'"/>
+		</div>
+		<div class="option point gps line shape slider">
+			<div class="label">Width</div> <input type="number" min="0" max="5" step="1" data-dojo-attach-point="width" id="drawOptionWidth" value="2">
+			
+			<input type="range" data-dojo-type="maple/widgets/Slider" value="2" min="0" max="5" step="1" data-dojo-props="hookTo:'drawOptionWidth'"/>
+		</div>
+
+		<div class="option point line shape switch marginTop">
+			<div class="label">Measure</div> <div data-dojo-type="dojox/mobile/Switch" leftLabel="On" rightLabel="Off" value="off" id="drawShowMeasurementsOption"></div>
+		</div>
+
+		<div class="option measurement line shape optionDropdown">
+			<div class="label">Distance</div> <div class="dropdown" data-dojo-attach-point="distanceUnitDropDownButton"></div>
+		</div>
+
+		<div class="option measurement shape optionDropdown">
+			<div class="label">Area</div> <div class="dropdown" data-dojo-attach-point="areaUnitDropDownButton"></div>
+		</div>
+	</div>
+	<div class="widgetActionButtons">
+		<button class="submit icon iconClear clearDrawing" data-dojo-type="dojox/mobile/Button" data-dojo-attach-event="onClick:clearDrawing" data-dojo-attach-point="clearDrawingButton">Clear Drawings</button>
+
+		<br/>
+		
+		<div class="no-ios relative">
+			<button class="submit icon iconSave" data-dojo-type="dojox/mobile/Button" data-dojo-attach-event="onClick:saveToFile" data-dojo-attach-point="saveToFileButton">Save<span class="hide-small-screen"> To .EJSN</span></button>
+
+			<button class="submit icon iconFolder" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="loadFromFileButton">Load<span class="hide-small-screen"> From .EJSN</span></button>
+			<form data-dojo-attach-point="loadFileInputForm">
+				<input type="file" name="file" data-dojo-attach-point="loadFileInput" multiple />
+			</form>
+		</div>
+		
+		<div data-dojo-attach-point="exportButtons" class="exportButtons">
+			<hr>
+			<div class="no-ios relative">
+				<button class="submit icon iconGeoJson" data-dojo-type="dojox/mobile/Button" data-dojo-attach-event="onClick:exportToGeoJson" data-dojo-attach-point="exportToGeoJsonButton">Export to GeoJSON</button>
+			</div>
+		</div>
+
+		<div class="itemError hide" data-dojo-attach-point="loadFileError">
+			<img src="/images/warning.svg" />
+			<div class="errorMessage" data-dojo-attach-point="loadFileErrorMessage"></div>
+		</div>
+	</div>
+</div>

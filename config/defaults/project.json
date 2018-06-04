@@ -1,0 +1,21 @@
+{
+  "configuration": {
+    "title": "Map Viewer",
+    "subtitle": "",
+    "disclaimer": "",
+    "logo": "",
+    "map": {
+      "attributionvisible": true,
+      "esrilogovisible": false,
+      "openhandcursorvisible": true,
+      "scalebarvisible": true,
+      "scalebar": "default",
+      "zoomslidervisible": false,
+      "wraparound180": true,
+      "addarcgisbasemaps": false,
+      "lods": {
+        "lod":[]
+      }
+    }
+  }
+}

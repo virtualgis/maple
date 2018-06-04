@@ -1,0 +1,18 @@
+<div>
+	<div class="panel">
+		<a title="Draw Line" class="button line" data-dojo-attach-event="onClick:setDrawLine"></a>
+		<a title="Draw Freehand Line" class="button freeline" data-dojo-attach-event="onClick:setDrawFreeLine"></a>
+		<a class="button maximize" data-dojo-attach-event="onClick:maximize"></a>
+		<div class="widgetOptions">
+			<div class="option optionDropdown">
+				<div class="label">Distance Unit</div> <div class="dropdown" data-dojo-attach-point="distanceUnitDropDownButton"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div data-dojo-attach-point="epChartContainer" id="epChartContainer">
+		<div id="epChart" data-dojo-attach-point="epChart">
+			<a class="button minimize" data-dojo-attach-event="onClick:maximize"></a>
+		</div>
+	</div>
+</div>
