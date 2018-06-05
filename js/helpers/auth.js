@@ -14,7 +14,7 @@
 * 
 * You should have received a copy of the GNU Affero General Public License
 * along with this program.  If not, see <https://www.gnu.org/licenses/>. */
-define(["maple/config/server", "esri/IdentityManager", 
+define(["maple/config/server", "maple/helpers/utils", "esri/IdentityManager", 
 	"dojo/cookie", "dojo/_base/array", "dojo/_base/lang", "dojo/request"], 
 	function(config, esriId, cookie, array, lang, request){
 	"use strict";
@@ -127,7 +127,7 @@ define(["maple/config/server", "esri/IdentityManager",
 						f: "json",
 						username: opts.username,
 						password: opts.password,
-						expiration: config.security.token.expiration
+						expiration: utils.get(config, "security.token.expiration", 360)
 					},
 					handleAs: "json",
 					// Avoid preflight request
@@ -193,7 +193,7 @@ define(["maple/config/server", "esri/IdentityManager",
 					  tokenServiceUrl: config.urls.tokenService,
 					  adminTokenServiceUrl: config.urls.adminTokenService,
 					  shortLivedTokenValidity: 1440,
-					  currentVersion: config.version,
+					  currentVersion: config.version || "",
 					  hasServer: true
 					},
 					{
@@ -201,7 +201,7 @@ define(["maple/config/server", "esri/IdentityManager",
 					  tokenServiceUrl: config.urls.tokenService,
 					  adminTokenServiceUrl: config.urls.adminTokenService,
 					  shortLivedTokenValidity: 1440,
-					  currentVersion: config.version,
+					  currentVersion: config.version || "",
 					  hasServer: true
 					}
 				  ],

@@ -1,0 +1,27 @@
+{
+  "configuration": {
+    "States": {
+      "configuration": {
+        "fields": {
+          "field": [
+            {
+              "alias": "Abbreviation:",
+              "name": "stusps",
+              "visible": true
+            },
+            {
+                "alias": "Land Area (m²):",
+                "name": "aland",
+                "visible": true,
+                "format": {
+                    "precision": 0,
+                    "usethousandsseparator": true
+                }
+            }
+          ]
+        },
+        "title": "{name}"
+      }
+    }
+  }
+}

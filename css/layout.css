@@ -121,10 +121,8 @@ form {
 
 form.newPassword label, form.newPassword input, form.newPassword .note {
   width: 180px; }
-
 form.newPassword label.hasNote {
   margin-bottom: 8px; }
-
 form.newPassword .note {
   position: absolute;
   margin-left: -6px;
@@ -139,7 +137,6 @@ form.newPassword .note {
 
 #mapToaster hr {
   display: none; }
-
 #mapToaster .dijitToasterContent {
   background-color: transparent;
   padding: 0;
@@ -155,7 +152,6 @@ form.newPassword .note {
     margin-left: 40px;
     word-wrap: break-word;
     min-height: 40px; }
-
 #mapToaster .toasterMessageContainer {
   padding: 0.25em;
   margin-bottom: 2px;
@@ -163,7 +159,6 @@ form.newPassword .note {
   background-color: #04B944; }
   #mapToaster .toasterMessageContainer:last-child {
     margin-bottom: 0; }
-
 #mapToaster .toasterTypeError {
   background-color: #BE3F3F; }
   #mapToaster .toasterTypeError .toasterIcon {
@@ -275,10 +270,8 @@ form.newPassword .note {
   background-size: 22px 22px; }
   .LocateButton .zoomLocateButton[data-locating="1"] {
     background-image: url(/images/spinner.gif) !important; }
-
 .LocateButton .tracking[data-locating="0"] {
   background-image: url(/images/stop.svg) !important; }
-
 .LocateButton .zoomLocateButton:hover {
   background-color: #eee; }
 
@@ -524,6 +517,7 @@ form.newPassword .note {
     display: inline-block;
     padding: 2px 6px;
     border: solid 1px #eee;
+    height: 14px;
     color: black !important;
     background-color: white; }
   .esriAttributeInspector .atiAttributes {
@@ -538,22 +532,19 @@ form.newPassword .note {
       padding: 8px 8px;
       border: solid 1px #eee;
       color: #ff0000;
-      background: #fff url(/images/trash.svg) no-repeat 8px 9px;
+      background: #fff url(/images/trash.svg) no-repeat 8px 5px;
       background-size: 20px; }
     .esriAttributeInspector .atiDeleteButton .dijitButtonText {
       margin-left: 24px; }
 
 .esriMobilePopupInfoView .atiNavButtons .dijitButtonNode {
   padding: 8px 11px; }
-
 .esriMobilePopupInfoView .atiNavMessage {
   margin-top: 2px; }
-
 .esriMobilePopupInfoView .atiLayerName {
   margin-top: 10px;
   display: block !important;
   padding-bottom: 4px; }
-
 .esriMobilePopupInfoView .esriAttributeInspector {
   margin-top: 0px;
   padding-top: 40px;
@@ -599,10 +590,8 @@ form.newPassword .note {
   padding: 8px; }
   #resetPassword .errorBox.hide, #loginScreen .errorBox.hide {
     display: none; }
-
 #resetPassword .errorMessage, #loginScreen .errorMessage {
   margin-left: 24px; }
-
 #resetPassword .success, #loginScreen .success {
   margin: 16px; }
 
@@ -652,7 +641,6 @@ form.newPassword .note {
 
 #sideMenu #accordion > .item > .title, .menuItemList > .item > .title {
   overflow: hidden; }
-
 #sideMenu #accordion > .item > .content, .menuItemList > .item > .content {
   display: none;
   background-color: #f8f8f8;
@@ -666,17 +654,14 @@ form.newPassword .note {
     #sideMenu #accordion > .item > .content .itemLoading img, .menuItemList > .item > .content .itemLoading img {
       position: relative;
       top: 3px; }
-
 #sideMenu #accordion > .item > .content.logout, .menuItemList > .item > .content.logout {
   margin: 8px;
   text-align: right;
   background-color: white; }
-
 #sideMenu #accordion > .item.open > .title, .menuItemList > .item.open > .title {
   background-color: #ddd; }
   #sideMenu #accordion > .item.open > .title:hover, .menuItemList > .item.open > .title:hover {
     background-color: #ddd; }
-
 #sideMenu #accordion > .item.open > .content, .menuItemList > .item.open > .content {
   display: block; }
 
@@ -1033,13 +1018,11 @@ button.icon {
 #bookmarksWidget .content {
   max-height: 330px;
   overflow-x: hidden; }
-
 #bookmarksWidget .esriBookmarks {
   width: auto;
   border: none; }
   #bookmarksWidget .esriBookmarks *:focus {
     outline: none; }
-
 #bookmarksWidget .esriBookmarkTable {
   width: 100% !important;
   border-spacing: 0;
@@ -1047,13 +1030,11 @@ button.icon {
   #bookmarksWidget .esriBookmarkTable .dojoDndItem {
     width: 100%;
     border: none !important; }
-
 #bookmarksWidget .esriBookmarkItem {
   width: auto;
   height: 32px; }
   #bookmarksWidget .esriBookmarkItem:hover {
     cursor: pointer; }
-
 #bookmarksWidget .esriBookmarkLabel {
   font-family: Roboto, sans-serif;
   font-size: 16px;
@@ -1064,16 +1045,13 @@ button.icon {
   text-overflow: ellipsis;
   overflow: hidden;
   padding-top: 8px; }
-
 #bookmarksWidget .esriBookmarkEditBox {
   height: 24px;
   padding-left: 8px;
   margin-left: 8px; }
-
 #bookmarksWidget .esriBookmarkEditImage, #bookmarksWidget .esriBookmarkRemoveImage {
   height: 36px;
   background-position: 8px 6px; }
-
 #bookmarksWidget .esriAddBookmark {
   margin-right: 8px;
   margin-bottom: 8px;
@@ -1222,13 +1200,11 @@ button.icon {
 
 #elevationProfile .panel {
   margin: 8px; }
-
 #elevationProfile .widgetOptions .option {
   display: block; }
   #elevationProfile .widgetOptions .option.optionDropdown {
     margin-top: 4px;
     margin-bottom: 16px; }
-
 #elevationProfile .button.maximize {
   position: absolute;
   right: 8px;
@@ -1243,7 +1219,6 @@ button.icon {
   font-size: 11px;
   width: auto;
   color: #000; }
-
 #epChartContainer .button.minimize {
   display: none;
   position: absolute;
@@ -1254,14 +1229,12 @@ button.icon {
   background-size: 40px 40px;
   background-repeat: no-repeat;
   background-image: url(/images/maximize.svg); }
-
 #epChartContainer #epChart {
   background-color: #f8f8f8;
   position: relative;
   height: 246px; }
   #epChartContainer #epChart .esriElevationProfileChartNode {
     height: 240px; }
-
 #epChartContainer.maximized {
   z-index: 94;
   box-sizing: border-box;
@@ -1346,22 +1319,18 @@ button.icon {
     float: left;
     margin-top: 1px;
     margin-right: 8px; }
-
 #print .itemLoading, #print .itemError {
   margin: 8px; }
-
 #print .widgetOptions .option {
   margin-bottom: 16px; }
   #print .widgetOptions .option.slider {
     margin-bottom: 0; }
-
 #print .printExportOptions {
   position: relative;
   top: -16px; }
 
 .uploader-wrapper .filename, .uploader-wrapper .perc, .uploader-wrapper .progress {
   display: inline-block; }
-
 .uploader-wrapper .filename {
   width: 200px;
   text-overflow: ellipsis;
@@ -1369,7 +1338,6 @@ button.icon {
   white-space: nowrap;
   position: relative;
   top: -2px; }
-
 .uploader-wrapper .perc {
   position: absolute;
   font-size: 14px;
@@ -1382,7 +1350,6 @@ button.icon {
   text-align: center;
   overflow: hidden;
   white-space: nowrap; }
-
 .uploader-wrapper .progress {
   width: 160px;
   height: 22px;
@@ -1698,7 +1665,6 @@ button.icon {
   src: url("fonts/icomoon.eot?#iefix16b0vm") format("embedded-opentype"), url("fonts/icomoon.ttf?16b0vm") format("truetype"), url("fonts/icomoon.woff?16b0vm") format("woff"), url("fonts/icomoon.svg?16b0vm#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 [class^="imicon-"], [class*=" imicon-"] {
   font-family: 'icomoon';
   speak: none;
@@ -1743,7 +1709,6 @@ button.icon {
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
-
 @keyframes imicon-spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -1751,7 +1716,6 @@ button.icon {
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
-
 html.touch, html.touch body {
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch; }
@@ -1979,6 +1943,7 @@ html.dj_ios .no-ios {
     display: block;
     margin-left: 0px;
     margin-top: 16px; }
+
   form.newPassword {
     text-align: center; }
     form.newPassword label {
@@ -1989,8 +1954,10 @@ html.dj_ios .no-ios {
         margin-bottom: 0; }
     form.newPassword .note {
       display: none; }
+
   #search #search_input {
     max-width: 250px; }
+
   html.touch {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
@@ -2036,28 +2003,27 @@ html.dj_ios .no-ios {
       top: 10px; }
     html.touch .searchInput.stretchedForMenu {
       width: 160px; }
+
   #epChartContainer.maximized {
     padding: 0;
     top: 0%;
     height: 100%; }
     #epChartContainer.maximized #epChart {
       box-shadow: none; } }
-
 @media only screen and (max-width: 421px) {
   #menuButton {
     top: 50%;
     right: -20px;
     margin-top: -25px;
     height: 50px; }
+
   html.touch #searchQuery .searchInput {
     width: 50%; }
   html.touch #searchQuery .category > .title .text {
     max-width: 200px; } }
-
 @media only screen and (max-width: 321px) {
   #search #search_input {
     max-width: 150px; } }
-
 /* Dijit classes (for measurement widget, edit widget) */
 .dijitInline {
   display: inline-block;
@@ -2589,7 +2555,6 @@ td.dijitMenuItemLabel {
 
 .dijitComboBox .dijitArrowButtonContainer {
   float: right; }
-
 .dijitComboBox .dijitButtonNode {
   width: 24px;
   height: 24px; }

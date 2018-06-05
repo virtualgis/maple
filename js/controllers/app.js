@@ -34,8 +34,10 @@ define(["dojo/has", "dojo/dom-class", "esri/config",
 		esriConfig.defaults.map.panRate = 1; // default panRate: 25
 		esriConfig.defaults.map.zoomDuration = 250; // default zoomDuration: 500
 		esriConfig.defaults.map.zoomRate = 1; // default zoomRate: 25
-		esriConfig.defaults.geometryService = new GeometryService(server.urls.geometryService);
-		esriConfig.defaults.kmlService = server.urls.kmlService;
+		if (server.urls){
+			esriConfig.defaults.geometryService = new GeometryService(server.urls.geometryService);
+			esriConfig.defaults.kmlService = server.urls.kmlService;
+		}
 
 		// Make sure timeouts are set or all XHR requests, not just
 		// those made with esri/request

@@ -1,0 +1,60 @@
+{
+  "configuration": {
+    "title": "Maple Demo",
+    "map": {
+      "initialextent": "-15099031.9184 78385.2938 -4655981.2688 6910530.3705",
+      "wkid": 102100,
+      "basemaps": {
+        "layer": [
+          {
+            "type": "tiled",
+            "label": "Imagery",
+            "icon": "https://www.arcgis.com/sharing/rest/content/items/86de95d4e0244cba80f0fa2c9403a7b2/info/thumbnail/tempimagery.jpg",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+            "visible": true
+          },
+          {
+            "type": "tiled",
+            "label": "Streets",
+            "icon": "https://www.arcgis.com/sharing/rest/content/items/d8855ee4d3d74413babfb0f41203b168/info/thumbnail/world_street_map.jpg",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+            "visible": false
+          }
+        ]
+      },
+      "operationallayers": {
+        "layer": [
+          {
+            "type": "feature",
+            "label": "United States",
+            "url": "https://services6.arcgis.com/lyROaIRQY8YJWdou/arcgis/rest/services/us_states/FeatureServer/0",
+            "visible": true,
+            "popupconfig": "popups/States.xml"
+          }
+        ]
+      }
+    },
+    "widgetcontainer": {
+      "widget": [
+        {
+          "url": "widgets/LayerList/LayerListWidget.swf",
+          "config": "widgets/LayerList/LayerListWidget.xml",
+          "label": "Layer List",
+          "icon": "assets/images/i_layers.png"
+        },
+        {
+          "url": "widgets/Bookmark/BookmarkWidget.swf",
+          "config": "widgets/Bookmark/BookmarkWidget.xml",
+          "label": "Jump To Location",
+          "icon": "assets/images/i_bookmark.png"
+        },
+        {
+          "url": "widgets/eMapSwitcher/eMapSwitcherWidget.swf",
+          "config": "widgets/eMapSwitcher/eMapSwitcherWidget.xml",
+          "label": "Basemaps",
+          "icon": "assets/images/i_basemaps.png"
+        }
+      ]
+    }
+  }
+}

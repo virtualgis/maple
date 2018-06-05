@@ -52,7 +52,6 @@ define(["dojo/dom", "dojo/dom-construct", "dojo/request", "dojo/dom-class", "doj
     	else{
     		// Normal course of action
 	    	console.log(error);
-	    	showReportWindow(error);
 			if (rethrow) throw new Error(error);
     	}
 	}

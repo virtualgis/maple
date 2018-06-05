@@ -111,10 +111,10 @@ define(["doh/runner", "tests/conf", "dojo/request",
 
     var testCases = [
       {
-        name: "project.init('sax')",
+        name: "project.init('default')",
         setUp: function(){},
         runTest: function(){
-          return testConfiguration('sax', undefined, {
+          return testConfiguration('default', undefined, {
             expectProfileOverride: true
           });
         },
@@ -124,7 +124,7 @@ define(["doh/runner", "tests/conf", "dojo/request",
       {
         name: "project.get()",
         runTest: function(){
-          doh.assertEqual(project.get("config.name", "default"), "sax", "Returning value that exists");
+          doh.assertEqual(project.get("config.name", "default"), "default", "Returning value that exists");
           doh.assertEqual(project.get("config.name.nonexistant", "default"), "default", "Returning default value on non-existant item");
           doh.assertTrue(project.get("", "default") === "default", "Returns default on empty string");
         }
@@ -132,17 +132,17 @@ define(["doh/runner", "tests/conf", "dojo/request",
 
       // Time to break things :)
       {
-        name: "project.init('sax', 'invalid.json')",
+        name: "project.init('default', 'invalid.json')",
         setUp: function(){},
         runTest: function(){
           var deferred = new doh.Deferred();
 
           // This will call errorHandler.die()
           errorHandler.setDieCallback(function(error){
-            doh.assertTrue(error.indexOf("FATAL: Request to load sax failed.") === 0, "Could not load bogus project.");
+            doh.assertTrue(error.indexOf("FATAL: Request to load default failed.") === 0, "Could not load bogus project.");
             deferred.resolve();
           });
-          testConfiguration("sax", "invalid.json");
+          testConfiguration("default", "invalid.json");
 
           return deferred;
         },
@@ -161,18 +161,18 @@ define(["doh/runner", "tests/conf", "dojo/request",
           errorHandler.setDieCallback(function(error){
             numberOfErrorHandlerCalls++;
 
-            doh.assertTrue(error.indexOf("FATAL: Request to load sax failed. Does a bogus.json file exist?") === 0, "Could not load bogus profile.");
+            doh.assertTrue(error.indexOf("FATAL: Request to load default failed. Does a bogus.json file exist?") === 0, "Could not load bogus profile.");
             doh.assertTrue(numberOfErrorHandlerCalls === 1, "Error handler is called once");
 
             project.loadProfile('bogus2.json', function(){
               doh.assertFalse(true, "Success callback (2) should not have been called");
             }, function(err){
-              doh.assertTrue(err.indexOf("FATAL: Request to load sax failed. Does a bogus2.json file exist?") === 0, "Could not load bogus project (callback).");
+              doh.assertTrue(err.indexOf("FATAL: Request to load default failed. Does a bogus2.json file exist?") === 0, "Could not load bogus project (callback).");
               deferred.resolve();
             });
           });
 
-          project.init('sax', 'config-general.json').then(function(){
+          project.init('default', 'config-general.json').then(function(){
             doh.assertTrue(project.config !== undefined, "Config exists");
 
             project.loadProfile('bogus.json', function(){

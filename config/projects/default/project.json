@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "default": "config.json"
+  },
+  "server": {
+  	"authentication": "public",
+    "supportEmail": "support@changeme.com"
+  }
+}

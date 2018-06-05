@@ -644,6 +644,7 @@ form.newPassword{
       display: inline-block;
       padding: 2px 6px;
       border: solid 1px #eee;
+      height: 14px;
       color: black !important;
       background-color: white;
     }
@@ -665,7 +666,7 @@ form.newPassword{
       padding: 8px 8px;
       border: solid 1px #eee;
       color: #ff0000;
-      background: #fff url(/images/trash.svg) no-repeat 8px 9px;
+      background: #fff url(/images/trash.svg) no-repeat 8px 5px;
       background-size: 20px;
     }
     .dijitButtonText{

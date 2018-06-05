@@ -12,10 +12,7 @@
       "scalebar": "default",
       "zoomslidervisible": false,
       "wraparound180": true,
-      "addarcgisbasemaps": false,
-      "lods": {
-        "lod":[]
-      }
+      "addarcgisbasemaps": false
     }
   }
 }

@@ -204,7 +204,7 @@ define(["dojo/Deferred", "dojo/request",
 											// Add "level" property
 											for (var i in arr) arr[i].level = parseInt(i);
 											return arr;
-										}else return [];
+										}else return undefined;
 									},
 
 									basemaps:{
@@ -332,7 +332,7 @@ define(["dojo/Deferred", "dojo/request",
 
 							// Generate module list
 							var modules = {
-								"popups": {} // Always load popups
+								"popups": {} // Always try to load popups
 							};
 
 							// Multi profile splash screen
@@ -413,6 +413,14 @@ define(["dojo/Deferred", "dojo/request",
 								{
 									key: "Edit",
 									urlTest: /Edit\/EditWidget\.swf/i
+								},
+								{
+									key: "LayerList",
+									urlTest: /LayerList\/LayerListWidget\.swf/i
+								},
+								{
+									key: "eMapSwitcher",
+									urlTest: /eMapSwitcher\/eMapSwitcherWidget\.swf/i
 								}
 							];
 
@@ -423,7 +431,6 @@ define(["dojo/Deferred", "dojo/request",
 							}
 							
 							array.forEach(widgetConfigObjs, function(widgetConfigObj){
-								
 								// Find widgets
 								for (var i = 0; i < widgetConfigObj.length; i++){
 									var widget = widgetConfigObj[i];
@@ -534,7 +541,7 @@ define(["dojo/Deferred", "dojo/request",
 									if (++modulesLoadedCount === modulesToLoadCount){
 					    				console.log("Configuration loaded for " + projectName);
 								    	done();
-									}				    	
+									}
 								}
 							};
 

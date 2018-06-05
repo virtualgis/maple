@@ -272,7 +272,24 @@ function(declare, _WidgetBase, template, _TemplatedMixin, _WidgetsInTemplateMixi
 								dom.byId("layerList").dojoClick = iOS;
 							}
 						},
-						initializeOn: 'layers-add-result'
+						initializeOn: 'layers-add-result',
+						showOnlyWhen: function(){
+							return project.config.hasWidget.LayerList;
+						}
+					}),
+					'basemap': new WidgetContainer({
+						container: self.basemap,
+						initialize: function(evt, done){
+							// The basemap widget
+							// is always initialized on map
+							// load, regardless of configuration
+							this.widget = basemapGallery;
+							if (done !== undefined) done(basemapGallery);
+						},
+						initializeOn: 'load',
+						showOnlyWhen: function(){
+							return project.config.hasWidget.eMapSwitcher;
+						}
 					}),
 					'legend': new WidgetContainer({
 						container: self.legend,
@@ -539,40 +556,6 @@ function(declare, _WidgetBase, template, _TemplatedMixin, _WidgetsInTemplateMixi
 			};
 			var widgetLoader = new WidgetLoader();
 
-			// Basemaps are loaded separately
-			// since we need to use them to load the first
-			// basemap
-			var loadBasemapsWidget = function(){
-				var basemapsLayers = mapLayers.getBasemapLayers();
-
-				if (basemapsLayers.length > 0){
-					// The basemapgallery removes the first operationallayer
-					// unless basemapIds are specified, in which case
-					// you need to add a layer to the map with that id
-					// See https://os.masseranolabs.com//dashboard#details/e08a5bcde9df95e0c46fe7ec11a899c9
-					basemapsLayers[0].id = "basemap_99999"; // _99999 guarantees this is the first basemap to be chosen when sorting
-					self.map.addLayer(basemapsLayers[0]);
-
-					var basemapGallery = new BasemapGallery({
-						basemapIds: ["basemap_99999"],
-						showArcGISBasemaps: project.get("config.map.addarcgisbasemaps", true),
-						basemaps: basemapsLayers,
-						bingMapsKey: project.get("config.bing.key", ""),
-						map: self.map
-					}, "basemapGallery");
-
-					basemapGallery.startup();
-
-					dom.byId("basemapsLoading").style.display = 'none';
-					basemapGallery.basemaps.sort(function(a, b){ return a.id > b.id ? -1 : 1; });
-
-					// Select first
-					if (basemapGallery.basemaps.length > 0){
-						basemapGallery.select(basemapGallery.basemaps[0].id);
-					}
-				}
-			};
-
 			// wait for all layers to be added
 			var handleLayersAddResult = function (evt){
 				// save reference to map in each layer (used by some widgets)
@@ -625,9 +608,42 @@ function(declare, _WidgetBase, template, _TemplatedMixin, _WidgetsInTemplateMixi
 				}, 8000);
 			});
 
-			// Basemaps (they need to be loaded after the map has loaded)
-			// https://os.masseranolabs.com//dashboard#details/c777201da1cecf05c087eb8510f85040
-			this.map.on("load", loadBasemapsWidget);
+			// Load basemap widget on map load
+			var basemapGallery;
+
+			this.map.on("load", function(evt){
+				var basemapsLayers = mapLayers.getBasemapLayers();
+
+				if (basemapsLayers.length > 0){
+					// The basemapgallery removes the first operationallayer
+					// unless basemapIds are specified, in which case
+					// you need to add a layer to the map with that id
+					// See https://os.masseranolabs.com//dashboard#details/e08a5bcde9df95e0c46fe7ec11a899c9
+					basemapsLayers[0].id = "basemap_99999"; // _99999 guarantees this is the first basemap to be chosen when sorting
+					self.map.addLayer(basemapsLayers[0]);
+
+					basemapGallery = new BasemapGallery({
+						basemapIds: ["basemap_99999"],
+						showArcGISBasemaps: project.get("config.map.addarcgisbasemaps", true),
+						basemaps: basemapsLayers,
+						bingMapsKey: project.get("config.bing.key", ""),
+						map: self.map
+					}, "basemapGallery");
+
+					basemapGallery.startup();
+
+					dom.byId("basemapsLoading").style.display = 'none';
+					basemapGallery.basemaps.sort(function(a, b){ return a.id > b.id ? -1 : 1; });
+
+					// Select first
+					if (basemapGallery.basemaps.length > 0){
+						basemapGallery.select(basemapGallery.basemaps[0].id);
+					}
+				}
+
+				// Pass the map load event to widgets that care
+				widgetLoader.handleEvent("load", evt);
+			});
 
 			this.queryWidget = new QueryWidget({
 				searchQuery: "searchQuery", // Container where to populate the search feature

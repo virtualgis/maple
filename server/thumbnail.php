@@ -55,6 +55,9 @@
                 $extension = ".png";
                 break;
         }
+        if (preg_match('/content-disposition: inline; filename=".+\.(jpg|png|jpeg|gif)"$/', $header, $matches, PREG_UNMATCHED_AS_NULL)){
+            $extension = "." . $matches[1];
+        }
 
         if ($extension) break;
     }
@@ -67,7 +70,6 @@
         $extension = strrchr($imageurl, '.');
         $extension = strtolower($extension);
     }
-
     if (in_array($extension, array(".jpg", ".jpeg", ".gif", ".png"))){
         list($width_orig, $height_orig) = getimagesize($imageurl);
 
@@ -78,8 +80,7 @@
             $width = ($height / $height_orig) * $width_orig;
         } else {
             $height = ($width / $width_orig) * $height_orig;
-        }
-
+        }   
 
         $image_out = imagecreatetruecolor($width, $height);
     }else{
