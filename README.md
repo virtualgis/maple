@@ -4,10 +4,21 @@ A modern, free and open-source web mapping application with built-in migration s
 
 ![Screenshot](https://user-images.githubusercontent.com/1951843/41064311-31dfb5fa-69a9-11e8-9074-c5f4b93e8040.png)
 
+In June 2016 Viewer for Flex was [discontinued](https://community.esri.com/groups/technical-support/blog/2014/11/10/final-release-and-support-plan-for-the-arcgis-apis-viewers-for-flex-and-silverlight) with no clear migration path for existing applications. Maple was born out of the necessity to provide such migration path. Our goals have been to:
+
+ - Allow an organization to continue using Viewer for Flex while the issues of a new application development are sorted out.
+ - Keep configurations between the legacy application and the new application in sync, allowing for a transition period in which both applications can be available to users.
+
+As a result of such goals, the configuration files in Maple have a 1-to-1 correspondence to those of legacy Flex applications.
+
+![maple-diagram](https://user-images.githubusercontent.com/1951843/41065327-55b2e012-69ac-11e8-977f-41f81feb73e6.png)
+
+We are planning to release the tool that automates the migration of legacy configuration files, but use of the tool is not required. Users can choose to port the configurations manually by using one of the many [XML to JSON converters](http://www.utilities-online.info/xmltojson/).
+
 ## Demo
 
-* ![Hello United States](https://maple.virtualgis.io/). A simple public map showcasing LayerList, eMapSwitcher and Bookmark widgets.
-* ![Construction Demo](https://maple.virtualgis.io/?p=superiordemo). A more complex configuration featuring user-based authentication (via the built-in user store) and showcasing LayerList, Legend, eMapSwitcher, Bookmark, Search, Locate, ElevationProfile, WMSLooping, Print, Query, ImportDataFile, Link, Measure, eDraw widgets.
+* [Hello United States](https://maple.virtualgis.io/). A simple public map showcasing LayerList, eMapSwitcher and Bookmark widgets.
+* [Construction Demo](https://maple.virtualgis.io/?p=superiordemo). A more complex configuration featuring user-based authentication (via the built-in user store) and showcasing LayerList, Legend, eMapSwitcher, Bookmark, Search, Locate, ElevationProfile, WMSLooping, Print, Query, ImportDataFile, Link, Measure, eDraw widgets.
 
 ## Getting Started
 
