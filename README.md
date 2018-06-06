@@ -50,6 +50,7 @@ We currently support the following widgets:
 - [X] eDraw
 - [X] ElevationProfile
 - [X] Print
+- [X] ConfigSelectSplash (Maple has support for multiple profiles)
 
 If you don't see one that you need in this list, open an [issue](https://github.com/virtualgis/maple/issues/new) to request it.
 
