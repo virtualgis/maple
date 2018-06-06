@@ -22,7 +22,7 @@ We are planning to release the tool that automates the migration of legacy confi
 
 ## Getting Started
 
-1. Install and configure a web server of your choice (Windows users can use ![XAMP](https://www.apachefriends.org/index.html), which also installs PHP).
+1. Install and configure a web server of your choice (Windows users can use [XAMP](https://www.apachefriends.org/index.html), which also installs PHP).
 2. Install and configure PHP.
 3. Download the [latest version](https://github.com/virtualgis/maple/archive/master.zip) of Maple and extract it in the root folder of your web server.
 4. Go to http://localhost to make sure the default application loads.
