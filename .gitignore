@@ -4,3 +4,4 @@ Thumbs.db
 App_Data/
 tests/config/configurations.json
 package-lock.*
+.htaccess
