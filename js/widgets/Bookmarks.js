@@ -34,8 +34,6 @@ function(declare, _WidgetBase, template, widgetTemplate,
 			this.inherited(arguments);
 		},
 
-
-
 		buildRendering: function(){
 			this.inherited(arguments);
 			var self = this;

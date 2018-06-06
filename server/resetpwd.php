@@ -21,7 +21,7 @@ ini_set("error_reporting", E_ALL & ~E_DEPRECATED);
 require 'config.php';
 require 'vendor/autoload.php';
 
-if (!isset(ARCGIS_WEBADAPTOR_ADMIN_URL)) die("Not enabled. Check your config.php");
+if (!defined('ARCGIS_WEBADAPTOR_ADMIN_URL')) die("Not enabled. Check your config.php");
 
 use GuzzleHttp\Client;
 use Flintstone\Flintstone;

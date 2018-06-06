@@ -19,7 +19,7 @@ define([
 	"esri/dijit/Scalebar", "esri/geometry/Point",
 	"maple/helpers/map/layers", "maple/helpers/map/search",
 	"esri/dijit/Search", "maple/helpers/auth", "dojox/mobile/TransitionEvent",
-	"dojo/i18n!esri/nls/jsapi", "esri/dijit/LocateButton", "maple/config/server",
+	"esri/dijit/LocateButton", "maple/config/server",
 	"maple/config/project", "dijit/registry", "maple/helpers/map/popup", "maple/helpers/map/infoTemplate",
 	"esri/layers/GraphicsLayer", "dojo/topic", "maple/widgets/SideMenu",
 	"maple/helpers/utils", "dojox/widget/Toaster", "dojo/_base/array",
@@ -29,7 +29,7 @@ define([
 			dom, has, domAttr, domStyle, query, Map, on,
 			Scalebar, Point, mapLayers, mapSearch,
 			Search, auth, TransitionEvent,
-			esriBundle, LocateButton, server,
+			LocateButton, server,
 			project, registry, popup, infoTemplate,
 			GraphicsLayer, topic, SideMenu, utils, Toaster, array,
 			domConstruct, Moveable, domClass
@@ -53,7 +53,6 @@ define([
 			goToLoginScreen(true);
 		}
 
-		esriBundle.widgets.Search.main.placeholder = project.get("config.widgets.Search.primary.searchPlaceholder", "Search");
 		var initialized = false;
 
 		return {
@@ -214,6 +213,7 @@ define([
 							enableSourcesMenu: true,
 							activeSourceIndex: "all",
 							zoomScale: project.get("config.widgets.Search.primary.zoomscale", 1000),
+							allPlaceholder: project.get("config.widgets.Search.primary.searchPlaceholder", "Search"),
 
 							map: map,
 							sources: mapSearch.getSources(),

@@ -70,12 +70,14 @@ define(["dojo/dom", "dojo/dom-style", "dojo/dom-class", "dojo/query", "dojo/on",
 			subtitle: project.config.subtitle,
 			logo: "/config/projects/" + project.config.name + "/" + project.config.logo,
 			lastUsername: auth.getLastUsername(),
-			disclaimer: project.config.disclaimer,
 			supportEmail: config.supportEmail,
 
 			init: function(){
 				new Toaster({id: 'loginToaster'}, dom.byId('ToasterPane'));
 				standBy = registry.byId("loginStandby");
+
+				// Set disclaimer
+				dom.byId('disclaimer').innerHTML = project.config.disclaimer;
 
 				// Check if we are redirecting to map view
 				if (goingToMapView()){

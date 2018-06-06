@@ -20,19 +20,20 @@
     if (!isset($_GET['u'])) die("Invalid image");
     $imageurl = $_GET['u'];
 
-    $allowed_domains = array(APP_URL);
+    // TODO: whitelist only certain domains
+    // $allowed_domains = array(APP_URL);
 
-    $allowed = false;
+    // $allowed = false;
 
-    foreach ($allowed_domains as $ad){
-        // startsWith
-        if (substr($imageurl, 0, strlen($ad)) === $ad){
-            $allowed = true;
-            break;
-        }
-    }
+    // foreach ($allowed_domains as $ad){
+    //     // startsWith
+    //     if (substr($imageurl, 0, strlen($ad)) === $ad){
+    //         $allowed = true;
+    //         break;
+    //     }
+    // }
 
-    if (!$allowed) die("Not allowed");
+    // if (!$allowed) die("Not allowed");
 
     $fp = fopen($imageurl, 'r');
     if (!(strpos($http_response_header[0], '200 OK') !== false)) die("Couldn't reach server");

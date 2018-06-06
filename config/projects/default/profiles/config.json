@@ -46,7 +46,7 @@
           "url": "widgets/Bookmark/BookmarkWidget.swf",
           "config": "widgets/Bookmark/BookmarkWidget.xml",
           "label": "Jump To Location",
-          "icon": "assets/images/i_bookmark.png"
+          "icon": "/images/bookmarks.svg"
         },
         {
           "url": "widgets/eMapSwitcher/eMapSwitcherWidget.swf",

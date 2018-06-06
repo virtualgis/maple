@@ -177,8 +177,9 @@ define(["dojo/Deferred", "dojo/request",
 					    	// Create configuration object
 					    	// This is where you can define helper methods
 					    	var config = {
-					    		getPath: function(relativePath){
-					    			return "/config/projects/" + this.name + "/" + relativePath;
+					    		getPath: function(assetPath){
+					    			if (assetPath[0] === "/") return assetPath;
+					    			else return "/config/projects/" + this.name + "/" + assetPath;
 					    		},
 
 						    	map: {
@@ -421,7 +422,23 @@ define(["dojo/Deferred", "dojo/request",
 								{
 									key: "eMapSwitcher",
 									urlTest: /eMapSwitcher\/eMapSwitcherWidget\.swf/i
-								}
+								},
+								{
+									key: "Measure",
+									urlTest: /Measure\/MeasureWidget\.swf/i
+								},
+								{
+									key: "eDraw",
+									urlTest: /eDraw\/eDrawWidget\.swf/i
+								},
+								{
+									key: "ElevationProfile",
+									urlTest: /ElevationProfile\/ElevationProfileWidget\.swf/i
+								},
+								{
+									key: "Print",
+									urlTest: /Print\/PrintWidget\.swf/i
+								}								
 							];
 
 							// Initialize hasWidget property

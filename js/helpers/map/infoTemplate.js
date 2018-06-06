@@ -214,7 +214,7 @@ define(["dojo/_base/array", "esri/InfoTemplate", "dojo/_base/lang",
 
 									if (["jpeg", "jpg", "png", "gif"].indexOf(ext) !== -1){
 										var thumbNode = self.getDynamicHtmlNode('<img class="thumbnail" src="/images/spinner.gif" title="' + file.name + '"/>'),
-											thumbUrl = "/serverscripts/thumbnail.php?u=" + file.url;
+											thumbUrl = "/server/thumbnail.php?u=" + file.url;
 										
 										thumbnail = thumbNode.getHtml();
 

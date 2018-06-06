@@ -105,7 +105,7 @@ define(["dojo/_base/array", "maple/config/project",
 
 	// Instantiate layer objects from the project's configuration
 	function getOperationalLayers(params){
-		params = lang.mixin({
+		params = dojo.mixin({
 			onError: function(err){},
 			test: false
 		}, params);

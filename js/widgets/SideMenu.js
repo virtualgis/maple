@@ -176,6 +176,9 @@ function(declare, _WidgetBase, template, _TemplatedMixin, _WidgetsInTemplateMixi
 							this.widget = widget;
 							dom.byId("drawLoading").style.display = 'none';
 							if (done !== undefined) done(widget);
+						},
+						showOnlyWhen: function(){
+							return project.config.hasWidget.eDraw;
 						}
 					}),
 					'measure': new WidgetContainer({
@@ -227,6 +230,9 @@ function(declare, _WidgetBase, template, _TemplatedMixin, _WidgetsInTemplateMixi
 							});
 							
 							if (done !== undefined) done(widget);
+						},
+						showOnlyWhen: function(){
+							return project.config.hasWidget.Measure;
 						}
 					}),
 					'export': new WidgetContainer({
@@ -240,6 +246,9 @@ function(declare, _WidgetBase, template, _TemplatedMixin, _WidgetsInTemplateMixi
 							this.widget.startup();
 							dom.byId("printLoading").style.display = 'none';
 							if (done !== undefined) done(this.widget);
+						},
+						showOnlyWhen: function(){
+							return project.config.hasWidget.Print; 
 						}
 					}),
 					'layerList': new WidgetContainer({
@@ -347,6 +356,9 @@ function(declare, _WidgetBase, template, _TemplatedMixin, _WidgetsInTemplateMixi
 							dom.byId("addDataLayersLoading").style.display = 'none';
 							
 							if (done !== undefined) done(this.widget);
+						},
+						showOnlyWhen: function(){
+							return project.config.hasWidget.ImportDataFile;
 						}
 					}),
 					'elevationProfile': (function(){
@@ -369,6 +381,9 @@ function(declare, _WidgetBase, template, _TemplatedMixin, _WidgetsInTemplateMixi
 								if (e === 'opened' && loaded){
 									this.widget.resizeChart();
 								}
+							},
+							showOnlyWhen: function(){
+								return project.config.hasWidget.ElevationProfile;
 							}
 						});
 					})(),
@@ -764,36 +779,38 @@ function(declare, _WidgetBase, template, _TemplatedMixin, _WidgetsInTemplateMixi
 			}
 
 			// Drag N drop
-			dndHandler.addListener(["zip"], "Add Shape File", function(files){
-						var widget = widgetLoader.getWidget("addDataLayers");
-						widgetLoader.load(widget, function(addDataLayer){
-							addDataLayer.processOnDrop(files);
+			if (project.config.hasWidget.ImportDataFile){
+				dndHandler.addListener(["zip"], "Add Shape File", function(files){
+							var widget = widgetLoader.getWidget("addDataLayers");
+							widgetLoader.load(widget, function(addDataLayer){
+								addDataLayer.processOnDrop(files);
+							});
 						});
-					});
-			dndHandler.addListener(["csv"], "Add Points File", function(files){
-						var widget = widgetLoader.getWidget("addDataLayers");
-						widgetLoader.load(widget, function(addDataLayer){
-							addDataLayer.processOnDrop(files);
+				dndHandler.addListener(["csv"], "Add Points File", function(files){
+							var widget = widgetLoader.getWidget("addDataLayers");
+							widgetLoader.load(widget, function(addDataLayer){
+								addDataLayer.processOnDrop(files);
+							});
 						});
-					});
-			dndHandler.addListener(["kml", "kmz"], "Add Google Earth File", function(files){
-						var widget = widgetLoader.getWidget("addDataLayers");
-						widgetLoader.load(widget, function(addDataLayer){
-							addDataLayer.processOnDrop(files);
+				dndHandler.addListener(["kml", "kmz"], "Add Google Earth File", function(files){
+							var widget = widgetLoader.getWidget("addDataLayers");
+							widgetLoader.load(widget, function(addDataLayer){
+								addDataLayer.processOnDrop(files);
+							});
 						});
-					});
-			dndHandler.addListener(["json"], "Add GeoJSON File", function(files){
-						var widget = widgetLoader.getWidget("addDataLayers");
-						widgetLoader.load(widget, function(addDataLayer){
-							addDataLayer.processOnDrop(files);
+				dndHandler.addListener(["json"], "Add GeoJSON File", function(files){
+							var widget = widgetLoader.getWidget("addDataLayers");
+							widgetLoader.load(widget, function(addDataLayer){
+								addDataLayer.processOnDrop(files);
+							});
 						});
-					});
-			dndHandler.addListener(["ejsn"], "Add Drawing", function(files){
-						var widget = widgetLoader.getWidget("draw");
-						widgetLoader.load(widget, function(draw){
-							draw.processOnDrop(files);
+				dndHandler.addListener(["ejsn"], "Add Drawing", function(files){
+							var widget = widgetLoader.getWidget("draw");
+							widgetLoader.load(widget, function(draw){
+								draw.processOnDrop(files);
+							});
 						});
-					});
+			}
 
 			this.emit("load", {});
 		},
