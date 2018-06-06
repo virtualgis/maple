@@ -1,0 +1,314 @@
+{
+  "configuration": {
+    "title": "Construction Design Demo",
+    "logo": "assets/images/GIS-desktop-mobile.jpg",
+    "disclaimer": "Hello! You can log-in by using <b>demo:demo</b> as credentials.",
+    "map": {
+      "attributionvisible": true,
+      "esrilogovisible": false,
+      "openhandcursorvisible": true,
+      "scalebarvisible": true,
+      "scalebar": "default",
+      "zoomslidervisible": false,
+      "wraparound180": true,
+      "addarcgisbasemaps": false,
+      "initialextent": "-10252323.27102724 5886736.240649998 -10244837.560150731 5890986.1394226495",
+      "wkid": 102100,
+      "top": 40,
+      "portalurl": "https://www.arcgis.com/",
+      "lods": {
+        "lod": [
+          {
+            "resolution": 4891.96981024998,
+            "scale": 18489297.737236
+          },
+          {
+            "resolution": 2445.9849051249894,
+            "scale": 9244648.868618
+          },
+          {
+            "resolution": 1222.9924525624947,
+            "scale": 4622324.434309
+          },
+          {
+            "resolution": 611.4962262813797,
+            "scale": 2311162.217155
+          },
+          {
+            "resolution": 305.74811314055756,
+            "scale": 1155581.108577
+          },
+          {
+            "resolution": 152.87405657041106,
+            "scale": 577790.554289
+          },
+          {
+            "resolution": 76.43702828507323,
+            "scale": 288895.277144
+          },
+          {
+            "resolution": 38.21851414253662,
+            "scale": 144447.638572
+          },
+          {
+            "resolution": 19.10925707126831,
+            "scale": 72223.819286
+          },
+          {
+            "resolution": 9.554628535634157,
+            "scale": 36111.909643
+          },
+          {
+            "resolution": 4.77731426794937,
+            "scale": 18055.954822
+          },
+          {
+            "resolution": 2.388657133974685,
+            "scale": 9027.977411
+          },
+          {
+            "resolution": 1.1943285668550505,
+            "scale": 4513.988705
+          },
+          {
+            "resolution": 0.5971642835598172,
+            "scale": 2256.994353
+          },
+          {
+            "resolution": 0.29858214164761665,
+            "scale": 1128.497176
+          },
+          {
+            "resolution": 0.1492910711,
+            "scale": 564.248588
+          },
+          {
+            "resolution": 0.07464553541190416,
+            "scale": 282.124294
+          },
+          {
+            "resolution": 0.03732276770595208,
+            "scale": 141.062147
+          },
+          {
+            "resolution": 0.01866138385297604,
+            "scale": 70.5310735
+          }
+        ]
+      },
+      "basemaps": {
+        "layer": [
+          {
+            "type": "tiled",
+            "label": "Imagery Hybrid",
+            "icon": "assets/images/hybrid.jpg",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+            "visible": true
+          },
+          {
+            "type": "tiled",
+            "label": "Imagery Hybrid",
+            "icon": "https://www.arcgis.com/sharing/rest/content/items/94f838a535334cf1aa061846514b77c7/info/thumbnail/world_transportation.jpg",
+            "url": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Aerials/MapServer",
+            "visible": true
+          },
+          {
+            "type": "tiled",
+            "label": "Imagery Hybrid",
+            "icon": "https://www.arcgis.com/sharing/rest/content/items/94f838a535334cf1aa061846514b77c7/info/thumbnail/world_transportation.jpg",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer",
+            "visible": true
+          },
+          {
+            "type": "tiled",
+            "label": "Imagery Hybrid",
+            "icon": "https://www.arcgis.com/sharing/rest/content/items/a842e359856a4365b1ddf8cc34fde079/info/thumbnail/world_boundaries_places.jpg",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer",
+            "visible": true
+          },
+          {
+            "type": "tiled",
+            "label": "Imagery",
+            "icon": "https://www.arcgis.com/sharing/rest/content/items/86de95d4e0244cba80f0fa2c9403a7b2/info/thumbnail/tempimagery.jpg",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+            "visible": false
+          },
+          {
+            "type": "tiled",
+            "label": "Streets",
+            "icon": "https://www.arcgis.com/sharing/rest/content/items/d8855ee4d3d74413babfb0f41203b168/info/thumbnail/world_street_map.jpg",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+            "visible": false
+          },
+          {
+            "type": "tiled",
+            "label": "Esri Topographic",
+            "icon": "https://www.arcgis.com/sharing/rest/content/items/6e03e8c26aad4b9c92a87c1063ddb0e3/info/thumbnail/topo_map_2.jpg",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
+            "visible": false
+          }
+        ]
+      },
+      "operationallayers": {
+        "layer": [
+          {
+            "type": "dynamic",
+            "label": "Superior Demo Layers",
+            "imageformat": "png32",
+            "url": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer",
+            "visible": true,
+            "sublayer": [
+              {
+                "id": 9,
+                "popupconfig": "popups/Parcels.xml"
+              },
+              {
+                "id": 11,
+                "popupconfig": "popups/Crossings.xml"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "widgetcontainer": {
+      "layout": "float",
+      "widget": [
+        {
+          "url": "widgets/Bookmark/BookmarkWidget.swf",
+          "config": "widgets/Bookmark/BookmarkWidget.xml",
+          "label": "Jump To Location",
+          "icon": "/images/bookmarks.svg"
+        },
+        {
+          "url": "widgets/Search/SearchWidget.swf",
+          "config": "widgets/Search/SearchWidget_Demo.xml",
+          "label": "Search For Features",
+          "icon": "assets/images/i_search.png"
+        },
+        {
+          "url": "widgets/Locate/LocateWidget.swf",
+          "config": "widgets/Locate/LocateWidget_1.xml",
+          "label": "Find Location",
+          "icon": "/images/location.svg"
+        },
+        {
+          "url": "widgets/ElevationProfile/ElevationProfileWidget.swf",
+          "config": "widgets/ElevationProfile/ElevationProfileWidget_1.xml",
+          "label": "Elevation Profile",
+          "icon": "assets/images/i_widget.png"
+        },
+        {
+          "url": "widgets/WMSLooping/WMSLoopingWidget.swf",
+          "config": "widgets/WMSLooping/WMSLoopingWidget.xml",
+          "label": "Live Weather Radar",
+          "icon": "assets/images/weather-rain-icon.png"
+        },
+        {
+          "url": "widgets/Print/PrintWidget.swf",
+          "config": "widgets/Print/PrintWidget_2.xml",
+          "label": "Export Map to PDF",
+          "icon": "assets/images/pdf-icon.gif"
+        }
+      ],
+      "widgetgroup": [
+        {
+          "label": "Crossings",
+          "icon": "assets/images/crossing.svg",
+          "widget": [
+            {
+              "url": "widgets/Query/QueryWidget.swf",
+              "config": "widgets/Query/Road_Crossings.xml",
+              "label": "Road Crossings",
+              "icon": "assets/images/highway.svg"
+            },
+            {
+              "url": "widgets/Query/QueryWidget.swf",
+              "config": "widgets/Query/Stream_Crossings.xml",
+              "label": "Stream Crossings",
+              "icon": "assets/images/hydro.svg"
+            },
+            {
+              "url": "widgets/Query/QueryWidget.swf",
+              "config": "widgets/Query/Utility_Crossings.xml",
+              "label": "Utility Crossings",
+              "icon": "/images/warning.svg"
+            },
+            {
+              "url": "widgets/eMapSwitcher/eMapSwitcherWidget.swf",
+              "config": "widgets/eMapSwitcher/eMapSwitcherWidget.xml",
+              "label": "Basemaps",
+              "icon": "assets/images/i_basemaps.png"
+            }
+          ]
+        },
+        {
+          "label": "Add Data/Layers",
+          "icon": "assets/images/AddContent32.png",
+          "widget": [
+            {
+              "url": "widgets/ShapeFiles/ShapeFilesWidget.swf",
+              "config": "widgets/ShapeFiles/ShapeFilesWidget.xml",
+              "label": "Load Shapefile (must be in a .zip folder)",
+              "icon": "assets/images/shapefiles.png"
+            },
+            {
+              "url": "widgets/ImportDataFile/ImportDataFileWidget.swf",
+              "config": "widgets/ImportDataFile/ImportDataFileWidget.xml",
+              "label": "Load points from CSV or Excel File",
+              "icon": "assets/images/excel.png"
+            }
+          ]
+        },
+        {
+          "label": "Links",
+          "icon": "/images/link.svg",
+          "widget": [
+            {
+              "url": "widgets/Link/LinkWidget.swf",
+              "config": "widgets/Link/VirtualGIS_Home_Page.xml",
+              "label": "VirtualGIS",
+              "icon": "//www.virtualgis.io/wp-content/uploads/2016/02/icon32.png"
+            }
+          ]
+        },
+        {
+          "label": "Layer List and Legend",
+          "icon": "assets/images/i_legend2.png",
+          "widget": [
+            {
+              "url": "widgets/LayerList/LayerListWidget.swf",
+              "config": "widgets/LayerList/LayerListWidget_LayerList1.xml",
+              "label": "Layer List",
+              "icon": "assets/images/i_layers.png"
+            },
+            {
+              "url": "widgets/Legend/LegendWidget.swf",
+              "config": "widgets/Legend/LegendWidget_2.xml",
+              "label": "Legend",
+              "icon": "assets/images/Legend32.png"
+            }
+          ]
+        },
+        {
+          "label": "Draw and Measure",
+          "icon": "assets/images/i_measure.png",
+          "widget": [
+            {
+              "url": "widgets/Measure/MeasureWidget.swf",
+              "config": "widgets/Measure/MeasureWidget_2.xml",
+              "label": "Measure",
+              "icon": "assets/images/i_measure2.png"
+            },
+            {
+              "url": "widgets/eDraw/eDrawWidget.swf",
+              "config": "widgets/eDraw/eDrawWidget_1.xml",
+              "label": "Draw",
+              "icon": "assets/images/i_draw.png"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

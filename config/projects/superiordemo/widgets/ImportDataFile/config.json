@@ -1,0 +1,31 @@
+{
+  "ImportDataFileWidget": {
+    "configuration": {
+      "xfield": "Longitude",
+      "yfield": "Latitude",
+      "MGRSfield": "MGRS",
+      "titlefield": "Title",
+      "linkfield": "Link",
+      "linkalias": {},
+      "zoomscale": 8000,
+      "mgrsenabled": true,
+      "inputdataprojection": {
+        "proj": [
+          {
+            "name": "Lat/Long",
+            "wkid": 4326
+          },
+          {
+            "name": "State Plane Illinois East USFT",
+            "wkid": 3443
+          },
+          {
+            "name": "Web Mercator",
+            "wkid": 102100
+          }
+        ]
+      },
+      "defaultproj": 3443
+    }
+  }
+}

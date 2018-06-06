@@ -1,0 +1,21 @@
+{
+  "RoutesWidget": {
+    "configuration": {
+      "serviceUrl": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/exts/DSUtility/routeLayers/2",
+      "menuLabel": "Stationing",
+      "routeIdFieldName": "LAYER",
+      "routeId": "PIPE_CL",
+      "searchPlaceholder": "Stationing (ex. 1+00)",
+      "zoomScale": 3000,
+      "tolerance": 10,
+      "instructionsText": "Press the button below and then select a point along the centerline to get stationing values, or type a stationing value in the search box to jump to the corresponding location.",
+      "popup": {
+        "measurementFieldLabel": "Stationing",
+        "displayLatLon": true,
+        "displayOriginalExtent": false,
+        "displayElevation": false,
+        "elevationFieldLabel": "Elevation (M)"
+      }
+    }
+  }
+}

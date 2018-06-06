@@ -1,0 +1,8 @@
+{  
+  "includeWidgets": [
+  	{
+        "url": "widgets/Routes/RoutesWidget.swf",
+        "config": "widgets/Routes/RoutesWidget.xml"
+  	}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "overrides": {
+    "widgets/Search/overrides": true,
+    "profiles/config": true
+  },
+  "profiles": {
+    "multiple": false,
+    "default": "config.json"
+  },
+  "server": {
+  	"authentication": "userstore",
+    "version": "10.3",
+    
+    "urls":{
+      "base": "https://gis.tdsmn.com",
+      "webAdaptor": "https://gis.tdsmn.com/arcgiswebadaptor",
+      "tokenService": "https://gis.tdsmn.com/arcgiswebadaptor/tokens/",
+      "adminTokenService": "https://gis.tdsmn.com/arcgiswebadaptor/admin/generateToken",
+      "printService": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/TDS_Utilities/ExportWebMap/GPServer/Export%20Web%20Map",
+      "geometryService": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Utilities/Geometry/GeometryServer",
+      "kmlService": "https://gis.tdsmn.com/arcgisportaladaptor/sharing/kml",
+      "elevationService": "https://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer"
+    },
+
+    "security":{
+      "token":{
+        "expiration": 360
+      }
+    },
+
+    "supportEmail": "support@mycompany.com"
+  }
+}

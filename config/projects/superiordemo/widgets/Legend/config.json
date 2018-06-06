@@ -1,0 +1,15 @@
+{
+  "LegendWidget_2": {
+    "configuration": {
+      "usebasemaps": false,
+      "useoperationallayers": true,
+      "respectcurrentmapscale": true,
+      "excludelayer": [
+        "Plats",
+        "Oct. 2012 Imagery",
+        "Soils",
+        "Hidden Search"
+      ]
+    }
+  }
+}

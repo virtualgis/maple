@@ -1,0 +1,146 @@
+{
+    "Road_Crossings": {
+        "configuration": {
+            "layer": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/11",
+            "query": "Type = 'Road'",
+            "titlefield": "Name",
+            "linkfield": {},
+            "refreshrate": {},
+            "zoomscale": [
+        1128,
+                {}
+      ],
+            "shareresults": false,
+            "orderbyfields": "Station ASC",
+            "fields": {
+                "all": false,
+                "field": [
+                    {
+                        "name": "Name",
+                        "alias": "Name",
+                        "visible": true,
+                        "format": {
+                            "precision": 0,
+                            "usethousandsseparator": false
+                        }
+          },
+                    {
+                        "name": "Station",
+                        "alias": "Station",
+                        "visible": true
+          }
+        ]
+            },
+            "filterfield": {
+                "name": "Name",
+                "alias": "Name"
+            },
+            "symbols": {
+                "picturemarkersymbol": [
+                    {
+                        "height": 20
+          },
+                    {
+                        "width": 20
+          }
+        ]
+            }
+        }
+    },
+    "Stream_Crossings": {
+        "configuration": {
+            "layer": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/11",
+            "query": "Type = 'Stream'",
+            "titlefield": "Name",
+            "linkfield": {},
+            "refreshrate": {},
+            "zoomscale": [
+        1128,
+                {}
+      ],
+            "shareresults": false,
+            "orderbyfields": "Station ASC",
+            "fields": {
+                "all": false,
+                "field": [
+                    {
+                        "name": "Name",
+                        "alias": "Name",
+                        "visible": true,
+                        "format": {
+                            "precision": 0,
+                            "usethousandsseparator": false
+                        }
+          },
+                    {
+                        "name": "Station",
+                        "alias": "Station",
+                        "visible": true
+          }
+        ]
+            },
+            "filterfield": {
+                "name": "Name",
+                "alias": "Name"
+            },
+            "symbols": {
+                "picturemarkersymbol": [
+                    {
+                        "height": 20
+          },
+                    {
+                        "width": 20
+          }
+        ]
+            }
+        }
+    },
+    "Utility_Crossings": {
+        "configuration": {
+            "layer": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/11",
+            "query": "Type <> 'Stream' AND Type <> 'Road'",
+            "titlefield": "Type",
+            "linkfield": {},
+            "refreshrate": {},
+            "zoomscale": [
+        1128,
+                {}
+      ],
+            "shareresults": false,
+            "orderbyfields": "Station ASC",
+            "fields": {
+                "all": false,
+                "field": [
+                    {
+                        "name": "Type",
+                        "alias": "Type",
+                        "visible": true,
+                        "format": {
+                            "precision": 0,
+                            "usethousandsseparator": false
+                        }
+          },
+                    {
+                        "name": "Station",
+                        "alias": "Station",
+                        "visible": true
+          }
+        ]
+            },
+            "filterfield": {
+                "name": "Type",
+                "alias": "Type"
+            },
+            "symbols": {
+                "picturemarkersymbol": [
+                    {
+                        "height": 20
+          },
+                    {
+                        "width": 20
+          }
+        ]
+            }
+        }
+    }
+}

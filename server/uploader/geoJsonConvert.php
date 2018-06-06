@@ -19,7 +19,7 @@ ini_set('memory_limit','512M');
 ob_start("ob_gzhandler");
 
 require(dirname(__FILE__) . '/include/Uploader.php');
-require(dirname(__FILE__) . '../config.php');
+require(dirname(__FILE__) . '/../config.php');
 
 $csvProjection = 4326;
 if (isset($_GET['csvProjection']) && is_numeric($_GET['csvProjection'])){

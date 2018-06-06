@@ -1,0 +1,142 @@
+{
+  "configuration": {
+    "Crossings": {
+      "configuration": {
+        "fields": {
+          "field": [
+            {
+              "alias": "Name:",
+              "name": "Name",
+              "visible": true
+            },
+            {
+              "alias": "Station:",
+              "name": "Station",
+              "visible": true
+            }
+          ]
+        },
+        "showattachments": true,
+        "showrelatedrecords": false,
+        "title": "{Name}"
+      }
+    },
+    "Parcels": {
+      "configuration": {
+        "fields": {
+          "field": [
+            {
+              "alias": "Owner:",
+              "name": "Owner",
+              "visible": true
+            },
+            {
+              "alias": "Land Acquisition Status:",
+              "name": "Acquisition_Status",
+              "visible": true
+            },
+            {
+              "alias": "Date of Land Acquisition:",
+              "format": {
+                "dateformat": "shortDate",
+                "precision": -1,
+                "usethousandsseparator": false,
+                "useutc": true
+              },
+              "name": "Land_Acquisition_Date",
+              "visible": true
+            },
+            {
+              "alias": "Date of Design Used for Acquisition:",
+              "format": {
+                "dateformat": "shortDate",
+                "precision": -1,
+                "usethousandsseparator": false,
+                "useutc": true
+              },
+              "name": "Design_Date_Acquisition",
+              "visible": true
+            },
+            {
+              "alias": "Design Updated:",
+              "format": {
+                "dateformat": "shortDate",
+                "precision": -1,
+                "usethousandsseparator": false,
+                "useutc": true
+              },
+              "name": "Layout_Design_Date",
+              "visible": true
+            },
+            {
+              "alias": "Centerline Length (FT):",
+              "format": {
+                "precision": 0,
+                "usethousandsseparator": true
+              },
+              "name": "CL_FT",
+              "visible": true
+            },
+            {
+              "alias": "Permanent Easment (AC):",
+              "format": {
+                "precision": 3,
+                "usethousandsseparator": true
+              },
+              "name": "PE_AC",
+              "visible": true
+            },
+            {
+              "alias": "Permanent Easment (SQFT):",
+              "format": {
+                "precision": 0,
+                "usethousandsseparator": true
+              },
+              "name": "PE_SQFT",
+              "visible": true
+            },
+            {
+              "alias": "Temporary Workspace (AC):",
+              "format": {
+                "precision": 3,
+                "usethousandsseparator": true
+              },
+              "name": "TWS_AC",
+              "visible": true
+            },
+            {
+              "alias": "Temporary Workspace (SQFT):",
+              "format": {
+                "precision": 0,
+                "usethousandsseparator": true
+              },
+              "name": "TWS_SQFT",
+              "visible": true
+            },
+            {
+              "alias": "Additional Temporary Workspace (AC):",
+              "format": {
+                "precision": 3,
+                "usethousandsseparator": true
+              },
+              "name": "ATWS_AC",
+              "visible": true
+            },
+            {
+              "alias": "Additional Temporary Workspace (SQFT):",
+              "format": {
+                "precision": 0,
+                "usethousandsseparator": true
+              },
+              "name": "ATWS_SQFT",
+              "visible": true
+            }
+          ]
+        },
+        "showattachments": false,
+        "showrelatedrecords": false,
+        "title": "{PARCELNO}"
+      }
+    }
+  }
+}

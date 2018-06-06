@@ -1,0 +1,54 @@
+{
+    "SearchWidget_Demo": {
+        "configuration": {
+            "zoomscale": 9000,
+            "shareresults": false,
+            "initialview": "text",
+            "layers": {
+                "layer": [
+                    {
+                        "name": "Search by Parcel Number",
+                        "url": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/9",
+                        "expression": "lower(PARCELNO) like lower('%[value]%')",
+                        "textsearchlabel": "Enter Tract Number (Example: P002)",
+                        "titlefield": "PARCELNO",
+                        "fields": {
+                            "field": [
+                                {
+                                    "name": "PARCELNO",
+                                    "alias": "Parcel Number"
+                },
+                                {
+                                    "name": "Owner",
+                                    "alias": "Owner"
+                }
+              ]
+                        },
+                        "orderbyfields": "PARCELNO ASC"
+          }
+        ,
+                    {
+                        "name": "Search by Owner Name",
+                        "url": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/9",
+                        "expression": "lower(Owner) like lower('%[value]%')",
+                        "textsearchlabel": "Enter Land Owner Name (Example: John Doe)",
+                        "titlefield": "Owner",
+                        "fields": {
+                            "field": [
+                                {
+                                    "name": "Owner",
+                                    "alias": "Owner"
+                },
+                                {
+                                    "name": "PARCELNO",
+                                    "alias": "Parcel Number"
+                }
+              ]
+                        },
+                        "orderbyfields": "PARCELNO ASC"
+          }
+        ]
+            }
+        }
+    }
+}

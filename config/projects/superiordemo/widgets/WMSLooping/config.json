@@ -1,0 +1,69 @@
+{
+  "WMSLoopingWidget": {
+    "configuration": {
+      "url": "https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi",
+      "version": "1.1.1",
+      "imgFormat": "png",
+      "dateFormatString": "YYYY-MM-DD L:NN A",
+      "layersToRotate": {
+        "layer": [
+          {
+            "offsetMins": -50,
+            "$t": "nexrad-n0r-900913-m50m"
+          },
+          {
+            "offsetMins": -45,
+            "$t": "nexrad-n0r-900913-m45m"
+          },
+          {
+            "offsetMins": -40,
+            "$t": "nexrad-n0r-900913-m40m"
+          },
+          {
+            "offsetMins": -35,
+            "$t": "nexrad-n0r-900913-m35m"
+          },
+          {
+            "offsetMins": -30,
+            "$t": "nexrad-n0r-900913-m30m"
+          },
+          {
+            "offsetMins": -25,
+            "$t": "nexrad-n0r-900913-m25m"
+          },
+          {
+            "offsetMins": -20,
+            "$t": "nexrad-n0r-900913-m20m"
+          },
+          {
+            "offsetMins": -15,
+            "$t": "nexrad-n0r-900913-m15m"
+          },
+          {
+            "offsetMins": -10,
+            "$t": "nexrad-n0r-900913-m10m"
+          },
+          {
+            "offsetMins": -5,
+            "$t": "nexrad-n0r-900913-m05m"
+          },
+          {
+            "offsetMins": 0,
+            "$t": "nexrad-n0r-900913"
+          }
+        ]
+      },
+      "timerMsPerLayer": 2000,
+      "startUpState": "running",
+      "opacityDefault": 90,
+      "about": "WMS radar reflectance service courtesy of Iowa State University. Click <u><a href=\"http://mesonet.agron.iastate.edu/ogc/\" target=\"_blank\">here</a></u> for details.",
+      "legend": {
+        "visible": true,
+        "imgURL": "https://mesonet.agron.iastate.edu/docs/nexrad_composites/reflect_ramp.png",
+        "imgRotationDegrees": -90,
+        "minLabel": "min",
+        "maxLabel": "max"
+      }
+    }
+  }
+}

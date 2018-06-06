@@ -1,0 +1,17 @@
+{
+"SearchWidget_Demo": {
+		"fieldTags": {
+			"Search by Parcel Number": {
+				"Owner": {
+					"id": true
+				}
+			},
+
+			"Search by Owner Name":{
+				"PARCELNO": {
+					"id": true
+				}
+			}
+		}	
+	}
+}

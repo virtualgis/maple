@@ -1,0 +1,9 @@
+{
+  "LocateWidget_1": {
+    "configuration": {
+      "locator": "https://geocode.arcgis.com/ArcGIS/rest/services/World/GeocodeServer",
+      "minscore": 40,
+      "zoomscale": 10000
+    }
+  }
+}
