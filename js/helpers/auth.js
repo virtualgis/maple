@@ -36,7 +36,7 @@ define(["maple/config/server", "maple/helpers/utils", "esri/IdentityManager",
 			var result = array.filter(array.map(project.config.map.operationallayers.layer, function(layer){
 						return layer.url;
 					}), function(url){
-						return url.indexOf(config.urls.base) !== -1;
+						return url.indexOf(utils.get(config, "urls.base", "")) !== -1;
 					});
 			if (result.length === 0) console.warn("No protected resources found! This might be an error.");
 			return result;
