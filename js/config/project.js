@@ -370,6 +370,7 @@ define(["dojo/Deferred", "dojo/request",
 								}
 							}
 
+							///<<<WIDGETPARSERSTART (do not remove this comment)
 							var widgetImportSettings = [
 								{
 									keys: ["Search"],
@@ -428,6 +429,7 @@ define(["dojo/Deferred", "dojo/request",
 									keys: ["Print"]
 								}		
 							];
+							//>>>WIDGETPARSEREND (do not remove this comment)
 
 							// Initialize hasWidget property
 							for (var j = 0; j < widgetImportSettings.length; j++){
