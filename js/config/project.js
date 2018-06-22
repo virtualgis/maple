@@ -224,7 +224,7 @@ define(["dojo/Deferred", "dojo/request",
 								popups:{
 									// @param popupConfig (XMl path such as popups/PopUp_tracts.xml)
 									get: function(popupConfig){
-										var key = (popupConfig.match(/[\/]?([^\/]+)\.xml$/) || {})[1];
+										var key = (popupConfig.match(/^(.+)\.xml$/i) || {})[1];
 										if (!key || !this[key] || !this[key].configuration){
 											console.warn("Could not find popup: " + popupConfig + ". Is it in popups.json?", projectName);
 											return null;
@@ -239,44 +239,48 @@ define(["dojo/Deferred", "dojo/request",
 									// maintaining the item/subitems hierarchy
 									findAll: function(type){
 										var result = [];
-										var regex = new RegExp("^widgets/" + type + "/([^\.]+)\.xml$");
+										var self = this;
 
-										function processItem(widget, parent){
-											var key = (widget.config.match(regex) || {})[1];
-											if (key){
-												if (config.widgets[type][key]){
-													parent.push({
-														label: widget.label,
-														icon: widget.icon,
-														config: config.widgets[type][key]
-													});
-												}else{
-													console.warn("Cannot find query widget: " + widget.config, config.name);
-												}									
-											}
-										}
+										array.forEach(config.widgetAliases[type], function(type){
+											var regex = new RegExp("^widgets/" + type + "/([^\.]+)\.xml$");
 
-										if (this.widget){
-											array.forEach(this.widget, function(widget){
-												processItem(widget, result);
-											});
-										}
-										if (this.widgetgroup){
-											array.forEach(this.widgetgroup, function(widgetgroup){
-												var widgetsInGroup = [];
-												array.forEach(widgetgroup.widget, function(widget){
-													processItem(widget, widgetsInGroup);
-												});
-												if (widgetsInGroup.length > 0){
-													result.push({
-														category: true,
-														label: widgetgroup.label,
-														icon: widgetgroup.icon,
-														widgets: widgetsInGroup
-													});
+											function processItem(widget, parent){
+												var key = (widget.config.match(regex) || {})[1];
+												if (key){
+													if (config.widgets[type][key]){
+														parent.push({
+															label: widget.label,
+															icon: widget.icon,
+															config: config.widgets[type][key]
+														});
+													}else{
+														console.warn("Cannot find query widget: " + widget.config, config.name);
+													}									
 												}
-											});
-										}
+											}
+
+											if (self.widget){
+												array.forEach(self.widget, function(widget){
+													processItem(widget, result);
+												});
+											}
+											if (self.widgetgroup){
+												array.forEach(self.widgetgroup, function(widgetgroup){
+													var widgetsInGroup = [];
+													array.forEach(widgetgroup.widget, function(widget){
+														processItem(widget, widgetsInGroup);
+													});
+													if (widgetsInGroup.length > 0){
+														result.push({
+															category: true,
+															label: widgetgroup.label,
+															icon: widgetgroup.icon,
+															widgets: widgetsInGroup
+														});
+													}
+												});
+											}
+										});
 
 										return result;
 									},
@@ -330,7 +334,8 @@ define(["dojo/Deferred", "dojo/request",
 							config.widgets = {};
 
 							config.hasWidget = {}; // hasWidget["Search"] = true, hasWidget["Query"] = ...
-
+							config.widgetAliases = {}; // widgetAliases["Draw"] = ["Draw", "eDraw"], ...
+							
 							// Generate module list
 							var modules = {
 								"popups": {} // Always try to load popups
@@ -367,8 +372,7 @@ define(["dojo/Deferred", "dojo/request",
 
 							var widgetImportSettings = [
 								{
-									key: "Search",
-									urlTest: /Search\/SearchWidget\.swf/i,
+									keys: ["Search"],
 									options: {
 										overrideRules: widgetProps.search.overrideRules,
 										merge: widgetProps.search.merge,
@@ -376,75 +380,61 @@ define(["dojo/Deferred", "dojo/request",
 									}
 								},
 								{
-									key: "Query",
-									urlTest: /Query\/QueryWidget\.swf/i,
+									keys: ["Query"]
 								},
 								{
-									key: "Bookmark",
-									urlTest: /Bookmark\/BookmarkWidget\.swf/i,
+									keys: ["Bookmark"]
 								},
 								{
-									key: "eTime",
-									urlTest: /eTime\/eTimeWidget\.swf/i,
+									keys: ["eTime"],
 								},
 								{
-									key: "WMSLooping",
-									urlTest: /WMSLooping\/WMSLoopingWidget\.swf/i,
+									keys: ["WMSLooping"]
 								},
 								{
-									key: "Legend",
-									urlTest: /Legend\/LegendWidget\.swf/i
+									keys: ["Legend"]
 								},
 								{
-									key: "Link",
-									urlTest: /Link\/LinkWidget\.swf/i
+									keys: ["Link"]
 								},
 								{
-									key: "Routes",
-									urlTest: /Routes\/RoutesWidget\.swf/i
+									keys: ["Routes"]
 								},
 								{
-									key: "Locate",
-									urlTest: /Locate\/LocateWidget\.swf/i
+									keys: ["Locate"]
 								},
 								{
-									key: "ImportDataFile",
-									urlTest: /ImportDataFile\/ImportDataFileWidget\.swf/i
+									keys: ["ImportDataFile"]
 								},
 								{
-									key: "Edit",
-									urlTest: /Edit\/EditWidget\.swf/i
+									keys: ["Edit"]
 								},
 								{
-									key: "LayerList",
-									urlTest: /LayerList\/LayerListWidget\.swf/i
+									keys: ["LayerList"]
 								},
 								{
-									key: "eMapSwitcher",
-									urlTest: /eMapSwitcher\/eMapSwitcherWidget\.swf/i
+									keys: ["eMapSwitcher", "MapSwitcher"]
 								},
 								{
-									key: "Measure",
-									urlTest: /Measure\/MeasureWidget\.swf/i
+									keys: ["Measure"]
 								},
 								{
-									key: "eDraw",
-									urlTest: /eDraw\/eDrawWidget\.swf/i
+									keys: ["eDraw", "Draw"]
 								},
 								{
-									key: "ElevationProfile",
-									urlTest: /ElevationProfile\/ElevationProfileWidget\.swf/i
+									keys: ["ElevationProfile"]
 								},
 								{
-									key: "Print",
-									urlTest: /Print\/PrintWidget\.swf/i
-								}								
+									keys: ["Print"]
+								}		
 							];
 
 							// Initialize hasWidget property
 							for (var j = 0; j < widgetImportSettings.length; j++){
 								var wis = widgetImportSettings[j];
-								if (config.hasWidget[wis.key] === undefined) config.hasWidget[wis.key] = false;
+								array.forEach(wis.keys, function(key){
+									if (config.hasWidget[key] === undefined) config.hasWidget[key] = false;
+								});
 							}
 							
 							array.forEach(widgetConfigObjs, function(widgetConfigObj){
@@ -454,18 +444,32 @@ define(["dojo/Deferred", "dojo/request",
 
 									for (var j = 0; j < widgetImportSettings.length; j++){
 										var wis = widgetImportSettings[j];
-										var modulePath = "widgets/" + wis.key + "/config";
+										var found = false;
 
-										if (wis.urlTest.test(widget.url)){
-											if (!modules[modulePath]){
-												modules[modulePath] = wis.options || {};
-												modules[modulePath].importFromCollection = [];
+										array.forEach(wis.keys, function(key){
+											var modulePath = "widgets/" + key + "/config";
+											var urlTest = new RegExp(key + "/" + key + "Widget\.swf", "i");
+
+											if (urlTest.test(widget.url)){
+												if (!modules[modulePath]){
+													modules[modulePath] = wis.options || {};
+													modules[modulePath].importFromCollection = [];
+												}
+												modules[modulePath].importFromCollection.push(widget.config.replace(/\.xml$/i, ""));
+
+												config.hasWidget[key] = true;
+
+												// Fill aliases
+												var mainKey = wis.keys[0];
+												config.widgetAliases[mainKey] = config.widgetAliases[mainKey] || [];
+												if (config.widgetAliases[mainKey].indexOf(key) === -1) config.widgetAliases[mainKey].push(key);
+												config.widgetAliases[key] = config.widgetAliases[mainKey];
+												
+												found = true;
 											}
-											modules[modulePath].importFromCollection.push(widget.config.replace(/\.xml$/i, ""));
+										});
 
-											config.hasWidget[wis.key] = true;
-											break;
-										}
+										if (found) break;
 									}
 								}
 							});
@@ -583,17 +587,14 @@ define(["dojo/Deferred", "dojo/request",
 								    		// moduleName = widgets/<widgetName>/config (the collection)
 
 								    		var moduleNameRoot = moduleName.replace(/config$/i, "");
-								    		var actualModuleName;  // Extracted from collection
 
-								    		array.forEach(modules[moduleName].importFromCollection, function(actualModuleName){
-								    			var name = (actualModuleName.match(/\/([^\/]+)$/) || {})[1];
-
+								    		array.forEach(modules[moduleName].importFromCollection, function(name){
 								    			if (json[name]){
 									    			// Copy reference to properties
-											    	modules[actualModuleName] = modules[moduleName];
-										    		moduleLoaded(actualModuleName, json[name]);
+											    	modules[name] = modules[moduleName];
+										    		moduleLoaded(name, json[name]);
 								    			}else{
-									    			moduleLoaded(actualModuleName, false);
+									    			moduleLoaded(name, false);
 									    		}
 								    		});
 							    			loadNextModule();

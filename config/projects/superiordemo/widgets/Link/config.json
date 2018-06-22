@@ -1,5 +1,5 @@
 {
-  "VirtualGIS_Home_Page": {
+  "widgets/Link/VirtualGIS_Home_Page": {
     "configuration": {
       "linkurl": "https://www.virtualgis.io"
     }

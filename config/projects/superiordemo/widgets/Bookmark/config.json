@@ -1,5 +1,5 @@
 {
-  "BookmarkWidget": {
+  "widgets/Bookmark/BookmarkWidget": {
     "configuration": {
       "bookmarks": {
         "bookmark": [

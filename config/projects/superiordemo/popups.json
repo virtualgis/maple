@@ -1,6 +1,6 @@
 {
   "configuration": {
-    "Crossings": {
+    "popups/Crossings": {
       "configuration": {
         "fields": {
           "field": [
@@ -21,7 +21,7 @@
         "title": "{Name}"
       }
     },
-    "Parcels": {
+    "popups/Parcels": {
       "configuration": {
         "fields": {
           "field": [

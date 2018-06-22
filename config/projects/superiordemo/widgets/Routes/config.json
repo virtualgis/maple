@@ -1,5 +1,5 @@
 {
-  "RoutesWidget": {
+  "widgets/Routes/RoutesWidget": {
     "configuration": {
       "serviceUrl": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/exts/DSUtility/routeLayers/2",
       "menuLabel": "Stationing",

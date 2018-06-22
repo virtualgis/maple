@@ -1,5 +1,5 @@
 {
-    "Road_Crossings": {
+    "widgets/Query/Road_Crossings": {
         "configuration": {
             "layer": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/11",
             "query": "Type = 'Road'",
@@ -47,7 +47,7 @@
             }
         }
     },
-    "Stream_Crossings": {
+    "widgets/Query/Stream_Crossings": {
         "configuration": {
             "layer": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/11",
             "query": "Type = 'Stream'",
@@ -95,7 +95,7 @@
             }
         }
     },
-    "Utility_Crossings": {
+    "widgets/Query/Utility_Crossings": {
         "configuration": {
             "layer": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/Superior_Demo/Superior_Demo_Main/MapServer/11",
             "query": "Type <> 'Stream' AND Type <> 'Road'",

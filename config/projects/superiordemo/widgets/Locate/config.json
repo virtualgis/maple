@@ -1,5 +1,5 @@
 {
-  "LocateWidget_1": {
+  "widgets/Locate/LocateWidget_1": {
     "configuration": {
       "locator": "https://geocode.arcgis.com/ArcGIS/rest/services/World/GeocodeServer",
       "minscore": 40,

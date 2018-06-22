@@ -1,5 +1,5 @@
 {
-  "ImportDataFileWidget": {
+  "widgets/ImportDataFile/ImportDataFileWidget": {
     "configuration": {
       "xfield": "Longitude",
       "yfield": "Latitude",
