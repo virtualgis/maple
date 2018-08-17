@@ -127,7 +127,8 @@ define(["maple/config/server", "maple/helpers/utils", "esri/IdentityManager",
 						f: "json",
 						username: opts.username,
 						password: opts.password,
-						expiration: utils.get(config, "security.token.expiration", 360)
+						expiration: utils.get(config, "security.token.expiration", 360),
+						client: "requestip"
 					},
 					handleAs: "json",
 					// Avoid preflight request
