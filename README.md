@@ -28,7 +28,21 @@ We are planning to release the tool that automates the migration of legacy confi
 4. Go to http://localhost to make sure the default application loads.
 5. Change the configuration files in `config/projects/default` for your application (documentation coming soon).
 
-A tool that automatically migrates configuration files coming from a legacy Flex Viewer application will also be available soon.
+## Getting Started wih Docker
+
+If you have [Docker](https://www.docker.com) you can simply run:
+
+```bash
+docker run -d -p 80:80 -v path/to/your/config:/var/www/html/config/projects/default virtualgis/maple
+```
+
+Then open a web browser to http://localhost.
+
+## Creating Configuration Files
+
+Currently looking at the existing configuration examples in `config/projects` is the easiest way to learn how to write configuration files for Maple.
+
+A tool that automatically migrates configuration files coming from a legacy Flex Viewer application will also be available soon, so that you don't have to do it by hand.
 
 ## Supported Widgets
 
