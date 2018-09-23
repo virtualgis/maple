@@ -96,7 +96,13 @@ If you have questions come to [Gitter](https://gitter.im/virtualgis/maple) and w
 
 The reason for selecting the [AGPL v3.0](https://github.com/virtualgis/maple/blob/master/LICENSE) as our open source license is to require that enhancements to Maple be released to the community. Traditional GPL often does not achieve this anymore as a huge amount of software runs in the cloud.
 
-If use of the AGPL v3 does not satisfy your organization’s legal department (some will not approve GPL in any form), commercial licenses are available. Feel free to [contact us](mailto:info@virtualgis.io) for more details.
+If use of the AGPL v3 does not satisfy your organization’s legal department (some will not approve GPL in any form), commercial licenses are available. Feel free to [contact us](https://virtualgis.io/contact) for more details.
+
+## ESRI Licensing and Attribution
+
+Maple is based on ESRI's Javascript SDK. Before deploying Maple in production, make sure you are complying with ESRI's [Licensing and Attribution](https://developers.arcgis.com/javascript/latest/guide/licensing/index.html).
+
+Maple is in no way affiliated with, authorized, maintained, sponsored or endorsed by ESRI or any of its affiliates or subsidiaries.
 
 ## Roadmap
 
