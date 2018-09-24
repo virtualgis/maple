@@ -14,8 +14,8 @@
 * 
 * You should have received a copy of the GNU Affero General Public License
 * along with this program.  If not, see <https://www.gnu.org/licenses/>. */
-define(["dojo/dom", "dojo/dom-construct", "dojo/request", "dojo/dom-class", "dojo/on", "dojo/topic"], 
-	function(dom, domConstructor, request, domClass, on, topic){
+define(["dojo/dom", "dojo/dom-construct", "dojo/request", "dojo/dom-class", "dojo/on", "dojo/topic", "jquery"], 
+	function(dom, domConstructor, request, domClass, on, topic, $){
 	"use strict";
 
 	// Decode ESRI's mess to catch connection errors
@@ -99,7 +99,13 @@ define(["dojo/dom", "dojo/dom-construct", "dojo/request", "dojo/dom-class", "doj
     		}
     	}
 
-    	console.log(err, stack);
+        // App loading error
+        if (!$("html").hasClass("loaded")){
+            $("#floatingBarsG").hide();
+            $("#loading-text").text("Uh oh! " + err.message);
+        }
+
+        console.log(err, stack);
     };
 
 	return {

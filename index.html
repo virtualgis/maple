@@ -286,8 +286,8 @@
   <script>
   (function(){
 	var slowConnTimeout = setTimeout(function(){
-		var load = document.getElementById("loading-text");
-		if (load) load.innerHTML = "Slow connection, hang on ...";
+        var load = document.getElementById("loading-text");
+		if (load && load.innerHTML.indexOf("Loading") === 0) load.innerHTML = "Slow connection, hang on ...";
 	}, 15000);
 
 	require.on("error", function(e){
