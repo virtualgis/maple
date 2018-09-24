@@ -206,7 +206,7 @@ define(["maple/config/server", "maple/helpers/utils", "esri/IdentityManager",
 					  tokenServiceUrl: tokenService,
 					  adminTokenServiceUrl: adminTokenService,
 					  shortLivedTokenValidity: 1440,
-					  currentVersion: config.version || "",
+					  currentVersion: "",
 					  hasServer: true
 					},
 					{
@@ -214,7 +214,7 @@ define(["maple/config/server", "maple/helpers/utils", "esri/IdentityManager",
 					  tokenServiceUrl: tokenService,
 					  adminTokenServiceUrl: adminTokenService,
 					  shortLivedTokenValidity: 1440,
-					  currentVersion: config.version || "",
+					  currentVersion: "",
 					  hasServer: true
 					}
 				  ],
