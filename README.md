@@ -17,8 +17,8 @@ We are planning to release the tool that automates the migration of legacy confi
 
 ## Demo
 
-* [Hello United States](https://maple.virtualgis.io/). A simple public map showcasing LayerList, eMapSwitcher and Bookmark widgets.
-* [Construction Demo](https://maple.virtualgis.io/?p=superiordemo). A more complex configuration featuring user-based authentication (via the built-in user store) and showcasing LayerList, Legend, eMapSwitcher, Bookmark, Search, Locate, ElevationProfile, WMSLooping, Print, Query, ImportDataFile, Link, Measure, eDraw widgets.
+* [Hello United States](https://mapledemo.virtualgis.io/). A simple public map showcasing LayerList, eMapSwitcher and Bookmark widgets.
+* [Construction Demo](https://mapledemo.virtualgis.io/?p=superiordemo). A more complex configuration featuring user-based authentication (via the built-in user store) and showcasing LayerList, Legend, eMapSwitcher, Bookmark, Search, Locate, ElevationProfile, WMSLooping, Print, Query, ImportDataFile, Link, Measure, eDraw widgets.
 
 ## Getting Started
 
