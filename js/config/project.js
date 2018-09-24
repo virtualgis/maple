@@ -107,6 +107,7 @@ define(["dojo/Deferred", "dojo/request",
 		        handleAs: "json"
 		    }).then(function(project){
 		    	if (!project.server) throw new Error("The 'server' property is missing from project.json. Please configure project.json with a 'server' property and reload the page.");
+                project.server.supportEmail = project.server.supportEmail || "info@virtualgis.io";
 
 		    	project.overrides = project.overrides || {};
 		    	project.profiles = project.profiles || {multiple: false};
