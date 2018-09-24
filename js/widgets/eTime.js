@@ -18,7 +18,7 @@ define([
 	 "dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
 	 "dojo/_base/lang", "dojo/_base/array", "dojo/text!./eTime.html",
 	 "maple/helpers/widgets/common",
-	 "dojo/dom-construct", "dojo/on", "dojo/query", "dojo/dom-class", "maple/config/server", "dojo/Evented",
+	 "dojo/dom-construct", "dojo/on", "dojo/query", "dojo/dom-class", "dojo/Evented",
 	 "dojo/topic", "maple/config/project",
 	 "esri/TimeExtent", "esri/dijit/TimeSlider", "esri/layers/TimeInfo",
 	 "dojo/date/locale", "maple/helpers/utils",
@@ -26,7 +26,7 @@ define([
 ], function (declare, _WidgetBase, _TemplatedMixin, 
 	lang, array, template, 
 	common,
-	domConstruct, on, query, domClass, server, Evented,
+	domConstruct, on, query, domClass, Evented,
 	topic, project,
 	TimeExtent, TimeSlider, TimeInfo,
 	locale, utils) {

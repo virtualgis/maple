@@ -18,7 +18,7 @@ define([
 	 "dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin", "dijit/_WidgetsInTemplateMixin",
 	 "dojo/_base/lang", "dojo/_base/array", "dojo/text!./Weather.html",
 	 "maple/config/project",	"esri/layers/WebTiledLayer",
-	 "dojo/on", "dojo/dom-class", "maple/config/server", "dijit/registry",
+	 "dojo/on", "dojo/dom-class", "dijit/registry",
 	 "maple/helpers/utils", "dojo/date/locale",
 	 "dojox/mobile/Switch",
 	 "maple/widgets/Slider",
@@ -26,7 +26,7 @@ define([
 ], function (declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin,
 	lang, array, template, 
 	project, WebTiledLayer,
-	on, domClass, server, registry,
+	on, domClass, registry,
 	utils, locale) {
 
 	return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {

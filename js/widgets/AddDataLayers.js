@@ -19,7 +19,6 @@ define([
  "dojo/text!./AddDataLayers.html",
  "maple/external/SimpleAjaxUploader",
  "esri/layers/KMLLayer",
- "maple/config/server",
  "dojo/dom-class", "dojo/on", "dojo/query", "dojo/_base/lang", "dojo/_base/array",
  "dojo/topic",
  "dojo/sniff",
@@ -35,7 +34,7 @@ define([
  "dojox/mobile/Button",
  "dojo/NodeList-manipulate"
 ], function (declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin,
-	template, SimpleAjaxUploader, KMLLayer, server,
+	template, SimpleAjaxUploader, KMLLayer,
 	domClass, on, query, lang, array,
 	topic, sniff,
 	scaleUtils, FeatureLayer, request,

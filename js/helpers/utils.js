@@ -389,6 +389,14 @@ define(["dojo/dom", "dojo/Deferred", "dojo/request", "dojo/_base/array"],
 			for (var i in funcs){
 				hook(funcs[i]);
 			}
-		}
+        },
+        
+        baseUrl: function(url){
+            if (!url) return "";
+            
+            var a = document.createElement("a");
+            a.href=url;
+            return a.protocol + '//' + a.host;
+        }
 	};
 });

@@ -20,19 +20,21 @@ define([
    "dojo/dom", "dojo/on", "dojo/_base/array", "dojo/dom-class", "dojo/query", "dojo/topic", 
    "maple/helpers/widgets/common", "esri/tasks/PrintParameters", "esri/tasks/PrintTemplate",
    "esri/tasks/PrintTask",
-   "maple/helpers/auth", "maple/config/server",
    "dijit/registry",
+   "maple/config/project",
+   "maple/helpers/utils",
    "dojo/NodeList-dom",
    "dojox/mobile/Button",
    "dojox/mobile/Switch",
    "dojox/mobile/SimpleDialog"
 ], function (declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, 
 	lang, template, 
-	dom, on, array, domClass, query, topic, 
+	dom, on, array, domClass, query, topic,
 	common, PrintParameters, PrintTemplate,
 	PrintTask,
-	auth, server,
-	registry) {
+    registry,
+    project,
+    utils) {
 
 	return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
 		widgetsInTemplate: true,
@@ -68,8 +70,10 @@ define([
 
 			params.template = template;
 			this.template = template;
-			this.printParams = params;
-			this.printTask = new PrintTask(server.urls.printService, {async: false});
+            this.printParams = params;
+            
+            var widget = project.config.widgetcontainer.findFirst("Print");
+			this.printTask = new PrintTask(utils.get(widget, "config.taskurl", "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"), {async: false});
 
 			this.format = common.createDropDown(this.formatDropDownButton, [
 					{label: "JPG", value: "jpg"},

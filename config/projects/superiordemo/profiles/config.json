@@ -3,6 +3,9 @@
     "title": "Construction Design Demo",
     "logo": "assets/images/GIS-desktop-mobile.jpg",
     "disclaimer": "Hello! You can log-in by using <b>demo:demo</b> as credentials.",
+    "geometryservice": {
+        "url": "https://utility.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer"
+    },
     "map": {
       "attributionvisible": true,
       "esrilogovisible": false,

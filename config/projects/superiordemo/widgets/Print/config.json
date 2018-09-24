@@ -1,6 +1,7 @@
 {
   "widgets/Print/PrintWidget_2": {
     "configuration": {
+        "taskurl": "https://gis.tdsmn.com/arcgiswebadaptor/rest/services/TDS_Utilities/SecureExportWebMap/GPServer/Export%20Web%20Map"
     }
   }
 }

@@ -33,17 +33,29 @@ define(["maple/config/server", "maple/helpers/utils", "esri/IdentityManager",
 		// Return only layer resources that have the server's name
 		// in the URL
 		function protectedResources(project){
-			var result = array.filter(array.map(project.config.map.operationallayers.layer, function(layer){
+            var result = array.filter(array.map(project.config.map.operationallayers.layer, function(layer){
 						return layer.url;
 					}), function(url){
-						return url.indexOf(utils.get(config, "urls.base", "")) !== -1;
+						return url.indexOf(baseUrl) !== -1;
 					});
 			if (result.length === 0) console.warn("No protected resources found! This might be an error.");
 			return result;
 		}
 
-		var hasLoggedIn = false;
-		if (config.authentication === "public") hasLoggedIn = true;
+        var baseUrl = '',
+            webAdaptor = '',
+            tokenService = '',
+            adminTokenService = '';
+
+        var hasLoggedIn = false;
+        if (config.authentication === "public") hasLoggedIn = true;
+        else{
+            webAdaptor = utils.get(config, "webAdaptor", "");
+            if (!webAdaptor) console.warn("webAdaptor URL is not specified, but config.authentication is not public.");
+            baseUrl = utils.baseUrl(webAdaptor);
+            tokenService = webAdaptor + '/tokens/';
+            adminTokenService = webAdaptor + '/admin/generateToken';
+        }
 
 		var module = {
 			// Check for log-in credentials
@@ -122,7 +134,7 @@ define(["maple/config/server", "maple/helpers/utils", "esri/IdentityManager",
 					referer: window.location.protocol + "//" + window.location.hostname
 				}, opts);
 
-				return request.post(config.urls.tokenService, {
+				return request.post(tokenService, {
 					data: {
 						f: "json",
 						username: opts.username,
@@ -190,17 +202,17 @@ define(["maple/config/server", "maple/helpers/utils", "esri/IdentityManager",
 				esriId.initialize({
 				  serverInfos: [
 					{
-					  server: config.urls.webAdaptor,
-					  tokenServiceUrl: config.urls.tokenService,
-					  adminTokenServiceUrl: config.urls.adminTokenService,
+					  server: webAdaptor,
+					  tokenServiceUrl: tokenService,
+					  adminTokenServiceUrl: adminTokenService,
 					  shortLivedTokenValidity: 1440,
 					  currentVersion: config.version || "",
 					  hasServer: true
 					},
 					{
-					  server: config.urls.base,
-					  tokenServiceUrl: config.urls.tokenService,
-					  adminTokenServiceUrl: config.urls.adminTokenService,
+					  server: baseUrl,
+					  tokenServiceUrl: tokenService,
+					  adminTokenServiceUrl: adminTokenService,
 					  shortLivedTokenValidity: 1440,
 					  currentVersion: config.version || "",
 					  hasServer: true
@@ -210,22 +222,22 @@ define(["maple/config/server", "maple/helpers/utils", "esri/IdentityManager",
 				  credentials: [
 					{
 					  userId: username,
-					  server: config.urls.webAdaptor,
+					  server: webAdaptor,
 					  token: token,
 					  expires: expires,
 					  validity: 1440,
-					  ssl: config.urls.webAdaptor.indexOf("https") === 0,
+					  ssl: webAdaptor.indexOf("https") === 0,
 					  creationTime: (new Date()).getTime(),
 					  scope: "server",
 					  resources: protectedResources(project)
 					},
 					{
 					  userId: username,
-					  server: config.urls.base,
+					  server: baseUrl,
 					  token: token,
 					  expires: expires,
 					  validity: 1440,
-					  ssl: config.urls.base.indexOf("https") === 0,
+					  ssl: baseUrl.indexOf("https") === 0,
 					  creationTime: (new Date()).getTime(),
 					  scope: "server",
 					  resources: protectedResources(project)

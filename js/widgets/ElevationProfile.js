@@ -20,7 +20,9 @@ define([
    "maple/helpers/widgets/common", "esri/units", "esri/toolbars/draw", 
    "esri/symbols/CartographicLineSymbol", "esri/symbols/SimpleLineSymbol",
    "esri/graphic", "esri/dijit/ElevationProfile", "esri/Color",
-   "dojo/dom-construct", "dojo/on", "dojo/query", "dojo/dom-class", "maple/config/server", "dojo/Evented",
+   "dojo/dom-construct", "dojo/on", "dojo/query", "dojo/dom-class", "dojo/Evented",
+   "maple/helpers/utils",
+   "maple/config/project",
    "dojo/topic",
    "dojo/NodeList-dom"
 ], function (declare, _WidgetBase, _TemplatedMixin, 
@@ -28,7 +30,9 @@ define([
 	common, Units, Draw, 
 	CartographicLineSymbol, SimpleLineSymbol, 
 	Graphic, ElevationProfileWidget, Color,
-	domConstruct, on, query, domClass, server, Evented,
+    domConstruct, on, query, domClass, Evented,
+    utils,
+    project,
 	topic) {
 
 	return declare([_WidgetBase, _TemplatedMixin, Evented], {
@@ -79,11 +83,13 @@ define([
 
 		startup: function(){
 			this.inherited(arguments);
-			var self = this;
+            var self = this;
+            
+            var widget = project.config.widgetcontainer.findFirst("ElevationProfile");
 
 			var profileParams = {
 				map: this.map,
-				profileTaskUrl: server.urls.elevationService,
+				profileTaskUrl: utils.get(widget, 'config.taskurl', 'https://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer'),
 				scalebarUnits: Units.MILES,
 				chartOptions: {
 					indicatorFontColor: "#000",

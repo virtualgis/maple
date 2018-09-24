@@ -16,11 +16,11 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 define(["dojo/dom", "dojo/dom-class", "dojo/query", "dojo/on", "dojo/request",
 		 "dojox/mobile/TransitionEvent",
-		 "maple/config/project", "maple/config/server",
+		 "maple/config/project",
 		 "dojo/_base/array", "maple/helpers/utils",
 		 "maple/helpers/auth", "dijit/registry"
 	], function(dom, domClass, query, on, request, TransitionEvent,
-				project, config, array, utils, auth, registry){
+				project, array, utils, auth, registry){
 		"use strict";
 		var standBy;
 
