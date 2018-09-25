@@ -13,7 +13,9 @@ As a result of such goals, the configuration files in Maple have a 1-to-1 corres
 
 ![maple-diagram](https://user-images.githubusercontent.com/1951843/41065327-55b2e012-69ac-11e8-977f-41f81feb73e6.png)
 
-We are planning to release the tool that automates the migration of legacy configuration files, but use of the tool is not required. Users can choose to port the configurations manually by using one of the many [XML to JSON converters](http://www.utilities-online.info/xmltojson/).
+A tool that automates the migration of legacy configuration files is available at https://maple.virtualgis.io
+
+Users can also write the configuration files for new projects manually or use one of the many [XML to JSON converters](http://www.utilities-online.info/xmltojson/) to convert their existing projects.
 
 ## Demo
 
@@ -70,7 +72,7 @@ If you don't see one that you need in this list, open an [issue](https://github.
 
 ## Documentation
 
-Coming soon
+The best source of documentation is currently to look at the [examples](https://github.com/virtualgis/maple/tree/master/config/projects). We are planning to expand our documentation in the upcoming months.
 
 ## Support the Project
 
@@ -106,16 +108,11 @@ Maple is in no way affiliated with, authorized, maintained, sponsored or endorse
 
 ## Roadmap
 
-- [X] Basemap, Layer List, Measure Tool, Draw Tool (etc.) widgets
-- [X] Icons
 - [ ] Documentation
-- [ ] Tools for Flex Viewer migration
-- [X] CLA, Code of Conduct, Contributing Guidelines, etc.
 - [ ] Unit Testing
 - [ ] ES6 support
 - [ ] Upgrade ESRI API to version 4
-- [X] ESRI Online Support
-- [X] ArcGIS Server Support
+- [ ] Support for more widgets
 
 ## Credits
 
