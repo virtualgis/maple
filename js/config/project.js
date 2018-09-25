@@ -363,7 +363,8 @@ define(["dojo/Deferred", "dojo/request",
 							}
 
 							// Find widgets (scan all of these paths)
-							var widgetConfigObjs = [];
+                            var widgetConfigObjs = [];
+                            if (utils.hasProp(config, "widget")) widgetConfigObjs.push(config.widget);
 							if (utils.hasProp(config, "widgetcontainer.widget")) widgetConfigObjs.push(config.widgetcontainer.widget);
 							if (utils.hasProp(config, "widgetcontainer.widgetgroup")){
 								for (var i = 0; i < config.widgetcontainer.widgetgroup.length; i++){
@@ -443,7 +444,7 @@ define(["dojo/Deferred", "dojo/request",
 							array.forEach(widgetConfigObjs, function(widgetConfigObj){
 								// Find widgets
 								for (var i = 0; i < widgetConfigObj.length; i++){
-									var widget = widgetConfigObj[i];
+                                    var widget = widgetConfigObj[i];
 
 									for (var j = 0; j < widgetImportSettings.length; j++){
 										var wis = widgetImportSettings[j];
@@ -459,8 +460,10 @@ define(["dojo/Deferred", "dojo/request",
 													modules[modulePath].importFromCollection = [];
 												}
 												modules[modulePath].importFromCollection.push(widget.config.replace(/\.xml$/i, ""));
-
-												config.hasWidget[key] = true;
+                                                
+                                                for (var i = 0; i < wis.keys.length; i++){
+                                                    config.hasWidget[wis.keys[i]] = true;
+                                                }
 
 												// Fill aliases
 												var mainKey = wis.keys[0];
