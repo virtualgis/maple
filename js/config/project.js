@@ -406,13 +406,13 @@ define(["dojo/Deferred", "dojo/request",
 									keys: ["Locate"]
 								},
 								{
-									keys: ["ImportDataFile"]
+									keys: ["ImportDataFile", "ShapeFiles"]
 								},
 								{
 									keys: ["Edit"]
 								},
 								{
-									keys: ["LayerList"]
+									keys: ["LayerList", "eLayerList"]
 								},
 								{
 									keys: ["eMapSwitcher", "MapSwitcher"]
