@@ -319,6 +319,8 @@ form.newPassword .note {
 
 .esriPopupWrapper .title {
   cursor: move; }
+  .esriPopupWrapper .title a {
+    color: #88DDFF; }
 
 .infoField .spinner {
   width: 12px;
@@ -1041,7 +1043,7 @@ button.icon {
   line-height: 15px;
   padding-left: 6px;
   height: 28px;
-  width: 308px;
+  width: 292px;
   text-overflow: ellipsis;
   overflow: hidden;
   padding-top: 8px; }
@@ -2641,3 +2643,5 @@ td.dijitMenuItemLabel {
 /* IE quirks */
 input::-ms-clear {
   display: none; }
+
+/*# sourceMappingURL=layout.css.map */
