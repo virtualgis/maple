@@ -185,13 +185,21 @@ define(["dojo/_base/array", "esri/InfoTemplate", "dojo/_base/lang",
 							// No explicit format? Check heuristic.
 							else if (field.type === undefined && dateHeuristic.test(field.name)) computedField += computeDateFormat("shortDate", true);
 
-							// Check that alias terminates with ":"
-							var alias = field.alias;
-							if (alias.lastIndexOf(":") !== alias.length - 1){
-								alias = alias + ":";
-							}
+                            var fieldTitle = "";
 
-							return self.getFieldHtml(alias, "${" + computedField + "}");
+							// Check that alias terminates with ":"
+                            var alias = field.alias;
+                            if (alias){
+                                if (alias.lastIndexOf(":") !== alias.length - 1){
+                                    alias = alias + ":";
+                                }
+                                fieldTitle = alias;
+                            }else{
+                                // No alias
+                                fieldTitle = field.name;
+                            }
+
+							return self.getFieldHtml(fieldTitle, "${" + computedField + "}");
 						}else{
 							return "";
 						}

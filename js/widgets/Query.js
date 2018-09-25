@@ -692,7 +692,18 @@ function(declare, _WidgetBase, template, categoryTemplate, itemTemplate, searchT
 				strokeWidth: 2
 			};
 			var	width, height;
-			var newIcon = "";
+            var newIcon = "";
+            
+            // Parse a color value from int32 encoding
+            var decodeColor = function(color32, alpha){
+                if (alpha === undefined) alpha = 1;
+                if (color32 === undefined) return new Color([255, 255, 255, alpha]);
+
+                var r = (color32 >> 16) & 0xFF,
+                    g = (color32 >> 8) & 0xFF,
+                    b = color32 & 0xFF;
+                return new Color([r, g, b, alpha]);
+            };
 
 			if (config.symbols){
 				if (config.symbols.picturemarkersymbol){
@@ -713,20 +724,23 @@ function(declare, _WidgetBase, template, categoryTemplate, itemTemplate, searchT
 					symbol = createPictureSymbol(icon, width, height);
 					this.featureLayer.setRenderer(new SimpleRenderer(symbol));
 				}else if (config.symbols.simplelinesymbol){
-					var alpha = 1;
-					var color = new Color([255, 255, 255, alpha]);
-					width = 4;
-					if (config.symbols.simplelinesymbol.color){
-						var color32 = config.symbols.simplelinesymbol.color;
-						var r = (color32 >> 16) & 0xFF,
-							g = (color32 >> 8) & 0xFF,
-							b = color32 & 0xFF;
-						color = new Color([r, g, b, alpha]);
-					}
-					if (config.symbols.simplelinesymbol.width) width = config.symbols.simplelinesymbol.width;
-
+					var color = decodeColor(config.symbols.simplelinesymbol.color);
+                    width = utils.get(config, 'symbols.simplelinesymbol.width', 4);
 					symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, color, width);
-				}else{
+                }else if (config.symbols.simplefillsymbol){
+					var fillColor = decodeColor(config.symbols.simplefillsymbol.color);
+                    var outlineColor = decodeColor(
+                                            utils.get(config, 'symbols.simplefillsymbol.outline.color', 65535),
+                                            utils.get(config, 'symbols.simplefillsymbol.outline.alpha', 1),
+                                        );
+                    symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, 
+                            new SimpleLineSymbol(
+                                SimpleLineSymbol.STYLE_SOLID, 
+                                outlineColor, 
+                                parseInt(utils.get(config, 'symbols.simplefillsymbol.outline.width', 4))
+                            ),
+                            fillColor);
+                }else{
 					console.warn("No symbol found for query: ", config);
 				}
 			}else if (geometryType === "point"){
