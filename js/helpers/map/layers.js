@@ -214,7 +214,8 @@ define(["dojo/_base/array", "maple/config/project",
 			case "webtiled":
 				return "WebTiledLayer";
 			case "tiled":
-			case "image":
+            case "image":
+            case "dynamic":
 				return undefined; // image corresponds to no need to specify type
 			case "bing":
 				return style && style.indexOf("aerial") !== -1 ? 

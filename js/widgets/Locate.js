@@ -28,7 +28,7 @@ function(declare, _WidgetBase, template, widgetTemplate,
 
 	var WidgetContainer = declare([_WidgetBase, _TemplatedMixin, Evented], {
 		templateString: widgetTemplate,
-		searchPlaceholder: "Chicago or 41.881832,-87.623177",
+		searchPlaceholder: "Enter address or latitude,longitude",
 
 		constructor: function(params, srcNodeRef){
 			this.inherited(arguments);
@@ -157,8 +157,8 @@ function(declare, _WidgetBase, template, widgetTemplate,
 
 			map = params.map;
 
-			// Get locate widgets
-			this.widgets = project.config.widgetcontainer.findAll("Locate");
+            // Get locate widgets
+			this.widgets = project.config.widgetcontainer.findAllFlat("Locate");
 		},
 
 		buildRendering: function(){
