@@ -185,15 +185,20 @@ define(["dojo/Deferred", "dojo/request",
 
 						    	map: {
 									getInitialExtent: function(){
-										if (this.initialextent && this.wkid){
-											var parts = this.initialextent.split(" ");
+										if (this.initialextent){
+                                            var parts = this.initialextent.split(" ");
+                                            var wkid = this.wkid;
+                                            if (!wkid){
+                                                console.warn('wkid is not specified, defaulting to 102100');
+                                                wkid = 102100;
+                                            }
 											var xmin = parseFloat(parts[0]),
 												ymin = parseFloat(parts[1]),
 												xmax = parseFloat(parts[2]),
 												ymax = parseFloat(parts[3]);
-											return new Extent(xmin, ymin, xmax, ymax, new SpatialReference({wkid: this.wkid}));
-										}
-
+											return new Extent(xmin, ymin, xmax, ymax, new SpatialReference({wkid: wkid}));
+                                        }
+                                        
 										console.warn("getInitiaExtent() returns null, initialextent and/or wkid missing from config.");
 										return null;
 									},
